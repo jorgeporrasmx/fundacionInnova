@@ -26,11 +26,11 @@
       --text-color: #333333;
       --light-bg: #f8f9fa;
       --max-width: 1200px;
-      --section-padding: 60px 40px;
-      --card-padding: 30px;
+      --section-padding: 36px 20px;
+      --card-padding: 24px;
       --border-radius: 15px;
-      --container-margin: 40px;
-      --section-spacing: 40px;
+      --container-margin: 24px;
+      --section-spacing: 18px;
     }
 
     .top-nav {
@@ -865,11 +865,11 @@
 
         <div class="scholarship-card">
           <p style="margin-bottom: 16px;"><strong><h3>Información General del Proceso</h3>
-            <p style="margin-bottom: 16px;"><Cada año realizamos convocatorias en las que evaluamos el potencial académico de quien postula, su adaptación escolar y el nivel socioeconómico de la familia.</p>
+            <p style="margin-bottom: 16px;"><Cada año se publicará una convocatoria especificando los grados participantes.</p>
           
           <p>¿Quiénes pueden ser los próximos Mexico Champs?</strong></p>
           <ul class="requirements-list">
-            <li>Nuestro programa de becas está diseñado para beneficiar, en general, a niñas y niños desde 2º de primaria hasta 1º de secundaria.</li>
+            <li>Nuestro programa de becas está diseñado para beneficiar a niñas y niños desde 2º de primaria hasta 1º de secundaria. <span style="color: #CE1126; font-style: italic;">Cada año se publicará una convocatoria especificando los grados participantes.</span></li>
             <li>Promedio mínimo de notas de 8.5 y buena conducta.</li>
             <li>Talento académico.</li>
             <li>Talento artístico o deportivo.</li>
@@ -901,9 +901,13 @@
 
   <section id="impacto" class="section">
     <div class="quote-carousel">
-      <div class="quote">
+      <div class="quote" id="quote1">
         Una educación de calidad tiene el poder de transformar a una generación y a una nación.
         <span class="quote-author">— Ban Ki-moon (ex Secretario General de la ONU)</span>
+      </div>
+      <div class="quote" id="quote2" style="display: none;">
+        El acceso a la educación de calidad es la base para mejorar la vida de las personas y alcanzar el desarrollo sostenible.
+        <span class="quote-author">— Agenda 2030 - Objetivo de Desarrollo Sostenible #4 (ONU)</span>
       </div>
     </div>
   </section>
@@ -1059,7 +1063,7 @@
       🔗 www.fundacioninnovamexico.org/convocatoria2025 (en construcción)</p>
       <p>📅 <strong>Apertura:</strong> Junio 10, 2025<br>
       📅 <strong>Cierre:</strong> Julio 15, 2025</p>
-      <blockquote style="margin: 20px 0; font-style: italic; color: #006847; border-left: 4px solid #CE1126; padding-left: 16px; background: #f8f9fa;">
+      <blockquote style="margin: 20px 0; padding: 15px; font-style: italic; color: #006847; border-left: 4px solid #CE1126; background: #f8f9fa; display: block;">
         💡 "El acceso a la educación de calidad es la base para mejorar la vida de las personas y alcanzar el desarrollo sostenible."<br>
         — Agenda 2030 - Objetivo de Desarrollo Sostenible #4 (ONU)
       </blockquote>
@@ -1104,10 +1108,10 @@
         acompanamiento: "Acompañamiento",
         acompanamientoText: "Apoyo psicológico-emocional continuo",
         infoGeneral: "Información General del Proceso",
-        infoGeneralText: "Cada año realizamos convocatorias en las que evaluamos el potencial académico de quien postula, su adaptación escolar y el nivel socioeconómico de la familia.",
+        infoGeneralText: "Cada año se publicará una convocatoria especificando los grados participantes.",
         proximosChamps: "¿Quiénes pueden ser los próximos Mexico Champs?",
         requisitos: [
-          "Nuestro programa de becas está diseñado para beneficiar, en general, a niñas y niños desde 2º de primaria hasta 1º de secundaria.",
+          "Nuestro programa de becas está diseñado para beneficiar a niñas y niños desde 2º de primaria hasta 1º de secundaria. <span style='color: #CE1126; font-style: italic;'>Cada año se publicará una convocatoria especificando los grados participantes.</span>",
           "Promedio mínimo de notas de 8.5 y buena conducta.",
           "Talento académico.",
           "Talento artístico o deportivo.",
@@ -1203,6 +1207,7 @@
         proximosChamps: "Who can be the next Mexico Champs?",
         requisitos: [
           "Our scholarship program is designed to benefit children from 2nd grade through 1st year of middle school.",
+          "Each year we conduct calls for applications where we evaluate the academic potential of applicants, their school adaptation, and the family's socioeconomic level.",
           "Minimum grade average of 8.5 and good conduct.",
           "Academic talent.",
           "Artistic or athletic talent.",
@@ -1379,6 +1384,56 @@
       const savedLang = localStorage.getItem('preferredLanguage') || 'es';
       updateLanguage(savedLang);
     });
+
+    // Modal functionality
+    const modal = document.getElementById('convocatoriaModal');
+    const openModalBtn = document.getElementById('openConvocatoriaModal');
+    const closeModalBtn = document.getElementById('closeConvocatoriaModal');
+
+    if (openModalBtn && modal && closeModalBtn) {
+      openModalBtn.addEventListener('click', function() {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      });
+
+      closeModalBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = ''; // Restore scrolling
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
+          modal.style.display = 'none';
+          document.body.style.overflow = ''; // Restore scrolling
+        }
+      });
+    }
+
+    // Quote rotation functionality
+    function rotateQuotes() {
+      const quote1 = document.getElementById('quote1');
+      const quote2 = document.getElementById('quote2');
+      
+      if (quote1.style.display !== 'none') {
+        quote1.style.display = 'none';
+        quote2.style.display = 'block';
+      } else {
+        quote1.style.display = 'block';
+        quote2.style.display = 'none';
+      }
+    }
+
+    // Rotate quotes every 5 seconds
+    setInterval(rotateQuotes, 5000);
   </script>
 </body>
 </html>
