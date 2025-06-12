@@ -781,6 +781,35 @@
         margin-top: 14px;
       }
     }
+
+    /* Animación para los íconos ODS */
+    .ods-icon {
+      transition: transform 0.33s cubic-bezier(.4,1.5,.5,1), box-shadow 0.33s cubic-bezier(.4,1.5,.5,1);
+      will-change: transform, box-shadow;
+    }
+    .ods-icon:hover {
+      transform: scale(1.19) rotate(-2deg);
+      box-shadow: 0 10px 32px 0 rgba(0,0,0,0.18);
+      z-index: 2;
+    }
+    .ods-section-container {
+      background: #f4f8fa;
+      border-radius: 18px;
+      padding: 40px 24px;
+      margin: 40px 0;
+      box-shadow: 0 2px 16px rgba(0,104,71,0.06);
+    }
+    .ods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .ods-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
   </style>
 </head>
 <body>
@@ -841,6 +870,66 @@
       </div>
       <h2 class="section-title">¿Qué hacemos?</h2>
       <p>Identificamos escolares de bajos recursos con talento académico, artístico o deportivo, y los becamos para que reciban una educación de excelencia en escuelas <span class="innova-font">Innova Schools</span>. No sólo otorgamos becas, reforzamos sus habilidades blandas y formamos líderes que contribuirán a un México más sostenible.</p>
+    </div>
+  </section>
+
+  <!-- Sección ODS -->
+  <section id="ods" class="section">
+    <div class="section-content ods-section-container">
+      <h2 class="section-title">Estamos alineados con los ODS</h2>
+      <p style="text-align:center; font-size:1.2rem; margin-bottom:32px;">🎯 Nuestro Compromiso con los Objetivos de Desarrollo Sostenible (ODS)</p>
+      <p>En la Fundación Innova México estamos convencidos de que la educación transforma vidas. Por ello, nuestras acciones están alineadas con los Objetivos de Desarrollo Sostenible de la Agenda 2030 de la ONU, especialmente con los siguientes:</p>
+      <div class="ods-grid">
+        <div class="ods-item">
+          <img src="assets/OD 4.png" alt="ODS 4 Educación de calidad" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
+          <div>
+            <strong>ODS 4 – Educación de Calidad</strong><br>
+            Garantizar una educación inclusiva, equitativa y de calidad.<br>
+            Brindamos becas escolares a niños y niñas con talento académico, artístico o deportivo, para que puedan desarrollar su potencial sin que los recursos económicos sean una barrera.
+          </div>
+        </div>
+        <div class="ods-item">
+          <img src="assets/OD 1.png" alt="ODS 1 Fin de la pobreza" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
+          <div>
+            <strong>ODS 1 – Fin de la Pobreza</strong><br>
+            Eliminar la pobreza en todas sus formas.<br>
+            Invertimos en la educación como una herramienta poderosa para romper el ciclo de pobreza y abrir nuevas oportunidades de vida.
+          </div>
+        </div>
+        <div class="ods-item">
+          <img src="assets/OD 5.png" alt="ODS 5 Igualdad de género" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
+          <div>
+            <strong>ODS 5 – Igualdad de Género</strong><br>
+            Lograr la igualdad entre los géneros.<br>
+            Promovemos la participación equitativa de niñas y niños en nuestras convocatorias, asegurando las mismas oportunidades para todos.
+          </div>
+        </div>
+        <div class="ods-item">
+          <img src="assets/ OD 10.png" alt="ODS 10 Reducción de las desigualdades" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
+          <div>
+            <strong>ODS 10 – Reducción de las Desigualdades</strong><br>
+            Reducir la desigualdad dentro y entre los países.<br>
+            Apoyamos a estudiantes de comunidades marginadas, dándoles acceso a educación de alta calidad en escuelas de primer nivel.
+          </div>
+        </div>
+        <div class="ods-item">
+          <img src="assets/OD 3.png" alt="ODS 3 Salud y bienestar" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
+          <div>
+            <strong>ODS 3 – Salud y Bienestar</strong><br>
+            Garantizar una vida sana y promover el bienestar en todas las edades.<br>
+            Nuestro programa de becas incluye acompañamiento psicológico y emocional para el desarrollo integral de los becados.
+          </div>
+        </div>
+        <div class="ods-item">
+          <img src="assets/OD 8.png" alt="ODS 8 Trabajo decente y crecimiento económico" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
+          <div>
+            <strong>ODS 8 – Trabajo Decente y Crecimiento Económico</strong><br>
+            Promover el empleo pleno, productivo y el trabajo decente para todos.<br>
+            Al formar estudiantes con habilidades académicas y socioemocionales sólidas, los preparamos para un futuro profesional digno y con mejores oportunidades económicas.
+          </div>
+        </div>
+        <!-- ODS 17 se agregará cuando esté disponible el ícono -->
+      </div>
     </div>
   </section>
 
@@ -1331,7 +1420,7 @@
           "Have an outstanding average in 6th grade",
           "Complete the online application form",
           "Submit a family income statement",
-          "Undergo a socioeconomic study (cost: $600 MXN)",
+          "Undergo a socioeconomic study (estimated cost: $600 MXN)",
           "Take academic exam and psychological test at the campus",
           "Complete campus interview"
         ],
