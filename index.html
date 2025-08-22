@@ -26,11 +26,11 @@
       --text-color: #333333;
       --light-bg: #f8f9fa;
       --max-width: 1200px;
-      --section-padding: 36px 20px;
-      --card-padding: 24px;
+      --section-padding: 60px 40px;
+      --card-padding: 30px;
       --border-radius: 15px;
-      --container-margin: 24px;
-      --section-spacing: 18px;
+      --container-margin: 40px;
+      --section-spacing: 40px;
     }
 
     .top-nav {
@@ -91,7 +91,7 @@
     }
 
     .hero-section {
-      min-height: 100dvh;
+      min-height: 100vh;
       width: 100%;
       position: relative;
       background: linear-gradient(rgba(0, 104, 71, 0.85), rgba(0, 104, 71, 0.85)), url('assets/foto3.jpg');
@@ -99,16 +99,14 @@
       background-position: center;
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 48px 16px 48px 16px;
-      gap: 40px;
+      padding: 120px 80px 80px;
       overflow: hidden;
     }
 
     .logo-container {
       flex: 0 0 auto;
-      margin-right: 40px;
       margin-right: 60px;
       position: relative;
       width: 200px;
@@ -651,165 +649,6 @@
       height: 20px;
       fill: currentColor;
     }
-
-    @font-face {
-      font-family: 'Innovitafont';
-      src: url('assets/Innovitafont.otf') format('opentype');
-      font-weight: normal;
-      font-style: normal;
-    }
-    .innova-font {
-      font-family: 'Innovitafont', sans-serif !important;
-      letter-spacing: 0.5px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.5);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
-      background: #fff;
-      margin: 40px auto;
-      padding: 30px 24px 24px 24px;
-      border-radius: 18px;
-      max-width: 540px;
-      width: 90%;
-      position: relative;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-      color: #222;
-      font-size: 1.08rem;
-      line-height: 1.7;
-      max-height: 80vh;
-      overflow-y: auto;
-    }
-    .close-modal {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      font-size: 2rem;
-      color: #CE1126;
-      cursor: pointer;
-      font-weight: bold;
-      transition: color 0.2s;
-    }
-    .close-modal:hover {
-      color: #006847;
-    }
-    @media (max-width: 600px) {
-      .modal-content {
-        padding: 18px 6vw 18px 6vw;
-        font-size: 0.98rem;
-      }
-    }
-
-    .quote-carousel {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 220px;
-      background: linear-gradient(90deg, #f8f9fa 60%, #e6f4ef 100%);
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(0,104,71,0.07);
-      margin: 40px auto 0 auto;
-      padding: 40px 20px;
-      max-width: 800px;
-    }
-    .quote {
-      position: relative;
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #006847;
-      text-align: center;
-      line-height: 1.5;
-      padding: 0 30px;
-    }
-    .quote::before, .quote::after {
-      content: '“';
-      font-size: 3.5rem;
-      color: #CE1126;
-      position: absolute;
-      top: -30px;
-      left: 10px;
-      opacity: 0.18;
-      font-family: serif;
-    }
-    .quote::after {
-      content: '”';
-      left: unset;
-      right: 10px;
-      top: unset;
-      bottom: -30px;
-    }
-    .quote-author {
-      display: block;
-      margin-top: 24px;
-      font-size: 1.1rem;
-      color: #CE1126;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      .quote-carousel {
-        padding: 24px 6vw;
-        min-height: 140px;
-      }
-      .quote {
-        font-size: 1.1rem;
-        padding: 0 6vw;
-      }
-      .quote::before, .quote::after {
-        font-size: 2.2rem;
-        top: -18px;
-        left: 0;
-      }
-      .quote::after {
-        right: 0;
-        bottom: -18px;
-      }
-      .quote-author {
-        font-size: 0.98rem;
-        margin-top: 14px;
-      }
-    }
-
-    /* Animación para los íconos ODS */
-    .ods-icon {
-      transition: transform 0.33s cubic-bezier(.4,1.5,.5,1), box-shadow 0.33s cubic-bezier(.4,1.5,.5,1);
-      will-change: transform, box-shadow;
-    }
-    .ods-icon:hover {
-      transform: scale(1.19) rotate(-2deg);
-      box-shadow: 0 10px 32px 0 rgba(0,0,0,0.18);
-      z-index: 2;
-    }
-    .ods-section-container {
-      background: #f4f8fa;
-      border-radius: 18px;
-      padding: 40px 24px;
-      margin: 40px 0;
-      box-shadow: 0 2px 16px rgba(0,104,71,0.06);
-    }
-    .ods-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
-      margin-top: 32px;
-    }
-    .ods-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 18px;
-    }
   </style>
 </head>
 <body>
@@ -819,12 +658,10 @@
       <a href="#programas">Programas</a>
       <a href="#impacto">Impacto</a>
       <a href="#donar">Donar</a>
-      <a href="#convocatoria">Convocatoria</a>
-      <a href="https://innovaschools.edu.mx/" target="_blank" rel="noopener noreferrer">Aliados</a>
       <div class="language-selector">
-        <a href="#" id="esBtn" style="color: var(--secondary-color);">ES</a>
+        <a href="#" style="color: var(--secondary-color);">ES</a>
         <span>|</span>
-        <a href="#" id="enBtn">EN</a>
+        <a href="#">EN</a>
       </div>
     </div>
   </nav>
@@ -833,21 +670,21 @@
     <div class="logo-container">
       <div class="logo-flipper">
         <div class="logo-face logo-front">
-          <img src="assets/Logo 2.svg" alt="Fundación Innova">
+          <img src="assets/logo.svg" alt="México Champs">
         </div>
         <div class="logo-face logo-back">
-          <img src="assets/logo-fundacion.png" alt="México Champs">
+          <img src="assets/Logo 2.svg" alt="Fundación Innova">
         </div>
       </div>
     </div>
     <div class="hero-content">
       <h1 class="hero-title">Transformamos vidas a través de una buena educación</h1>
-      <p class="hero-description">Identificamos escolares de bajos recursos con alto talento académico, artístico o deportivo y los becamos para que reciban una educación de excelencia en <span class="innova-font">Innova Schools</span>.</p>
+      <p class="hero-description">Identificamos escolares de bajos recursos con alto talento académico, artístico o deportivo y los becamos para que reciban una educación de excelencia en Innova Schools.</p>
       <a href="#donar" class="cta-button">Dona aquí</a>
     </div>
   </section>
 
-  <a href="https://wa.me/525555330734" class="floating-whatsapp" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/525555085657" class="floating-whatsapp" target="_blank" rel="noopener noreferrer">
     <svg viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
@@ -869,67 +706,7 @@
         </div>
       </div>
       <h2 class="section-title">¿Qué hacemos?</h2>
-      <p>Identificamos escolares de bajos recursos con talento académico, artístico o deportivo, y los becamos para que reciban una educación de excelencia en escuelas <span class="innova-font">Innova Schools</span>. No sólo otorgamos becas, reforzamos sus habilidades blandas y formamos líderes que contribuirán a un México más sostenible.</p>
-    </div>
-  </section>
-
-  <!-- Sección ODS -->
-  <section id="ods" class="section">
-    <div class="section-content ods-section-container">
-      <h2 class="section-title">Estamos alineados con los ODS</h2>
-      <p style="text-align:center; font-size:1.2rem; margin-bottom:32px;">🎯 Nuestro Compromiso con los Objetivos de Desarrollo Sostenible (ODS)</p>
-      <p>En la Fundación Innova México estamos convencidos de que la educación transforma vidas. Por ello, nuestras acciones están alineadas con los Objetivos de Desarrollo Sostenible de la Agenda 2030 de la ONU, especialmente con los siguientes:</p>
-      <div class="ods-grid">
-        <div class="ods-item">
-          <img src="assets/OD 4.png" alt="ODS 4 Educación de calidad" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
-          <div>
-            <strong>ODS 4 – Educación de Calidad</strong><br>
-            Garantizar una educación inclusiva, equitativa y de calidad.<br>
-            Brindamos becas escolares a niños y niñas con talento académico, artístico o deportivo, para que puedan desarrollar su potencial sin que los recursos económicos sean una barrera.
-          </div>
-        </div>
-        <div class="ods-item">
-          <img src="assets/OD 1.png" alt="ODS 1 Fin de la pobreza" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
-          <div>
-            <strong>ODS 1 – Fin de la Pobreza</strong><br>
-            Eliminar la pobreza en todas sus formas.<br>
-            Invertimos en la educación como una herramienta poderosa para romper el ciclo de pobreza y abrir nuevas oportunidades de vida.
-          </div>
-        </div>
-        <div class="ods-item">
-          <img src="assets/OD 5.png" alt="ODS 5 Igualdad de género" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
-          <div>
-            <strong>ODS 5 – Igualdad de Género</strong><br>
-            Lograr la igualdad entre los géneros.<br>
-            Promovemos la participación equitativa de niñas y niños en nuestras convocatorias, asegurando las mismas oportunidades para todos.
-          </div>
-        </div>
-        <div class="ods-item">
-          <img src="assets/ OD 10.png" alt="ODS 10 Reducción de las desigualdades" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
-          <div>
-            <strong>ODS 10 – Reducción de las Desigualdades</strong><br>
-            Reducir la desigualdad dentro y entre los países.<br>
-            Apoyamos a estudiantes de comunidades marginadas, dándoles acceso a educación de alta calidad en escuelas de primer nivel.
-          </div>
-        </div>
-        <div class="ods-item">
-          <img src="assets/OD 3.png" alt="ODS 3 Salud y bienestar" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
-          <div>
-            <strong>ODS 3 – Salud y Bienestar</strong><br>
-            Garantizar una vida sana y promover el bienestar en todas las edades.<br>
-            Nuestro programa de becas incluye acompañamiento psicológico y emocional para el desarrollo integral de los becados.
-          </div>
-        </div>
-        <div class="ods-item">
-          <img src="assets/OD 8.png" alt="ODS 8 Trabajo decente y crecimiento económico" style="width:70px; height:70px; flex-shrink:0;" class="ods-icon">
-          <div>
-            <strong>ODS 8 – Trabajo Decente y Crecimiento Económico</strong><br>
-            Promover el empleo pleno, productivo y el trabajo decente para todos.<br>
-            Al formar estudiantes con habilidades académicas y socioemocionales sólidas, los preparamos para un futuro profesional digno y con mejores oportunidades económicas.
-          </div>
-        </div>
-        <!-- ODS 17 se agregará cuando esté disponible el ícono -->
-      </div>
+      <p>Identificamos escolares de bajos recursos con talento académico, artístico o deportivo, y los becamos para que reciban una educación de excelencia en escuelas Innova Schools. No sólo otorgamos becas, reforzamos sus habilidades blandas y formamos líderes que contribuirán a un México más sostenible.</p>
     </div>
   </section>
 
@@ -942,7 +719,7 @@
           <div class="scholarship-benefits">
             <div class="scholarship-benefit">
               <h4>Cobertura Académica</h4>
-              <p>Becas del 75% en colegios <span class="innova-font">Innova Schools </span>y 100% de la Inscripción</p>
+              <p>75% de la mensualidad en Innova Schools y 100% de la inscripción</p>
             </div>
             <div class="scholarship-benefit">
               <h4>Programa de Liderazgo</h4>
@@ -956,35 +733,34 @@
         </div>
 
         <div class="scholarship-card">
-          <p style="margin-bottom: 16px;"><strong><h3>Información General del Proceso</h3>
-            <p style="margin-bottom: 16px;"><Cada año se publicará una convocatoria especificando los grados participantes.</p>
+          <h3>¿Cómo postular?</h3>
+          <p>Cada año realizamos convocatorias en las que evaluamos el potencial académico de quien postula, su adaptación escolar y el nivel socioeconómico de la familia.</p>
           
-          <p>¿Quiénes pueden ser los próximos México Champs?</strong></p>
+          <h4>Requisitos de Postulación</h4>
           <ul class="requirements-list">
-            <li>Nuestro programa de becas está diseñado para beneficiar a niñas y niños desde 2º de primaria hasta 1º de secundaria. <span style="color: #CE1126; font-style: italic;">Cada año se publicará una convocatoria especificando los grados participantes.</span></li>
-            <li>Promedio mínimo de notas de 8.5 y buena conducta.</li>
-            <li>Talento académico.</li>
-            <li>Talento artístico o deportivo.</li>
-            <li>El postulante no debe estar cursando sus estudios en <span class="innova-font">Innova Schools</span> México.</li>
-            <li>Existencia de una necesidad económica que será auditada mediante un estudio socioeconómico con una cuota de recuperación de $600.</li>
+            <li>Estudiantes que ingresen desde 2do primaria hasta 2do secundaria</li>
+            <li>Promedio mínimo de notas de 8.5 y buena conducta</li>
+            <li>Talento académico</li>
+            <li>Talento artístico o deportivo</li>
+            <li>El postulante no debe estar cursando sus estudios en Innova Schools México</li>
+            <li>Existencia de una necesidad económica que será auditada mediante un estudio socioeconómico con un costo de $700</li>
           </ul>
 
           <div class="renewal-requirements">
-            <h4><p style="margin-bottom: 16px;">Renovación de la beca</p></h4>
+            <h4>Renovación de la beca</h4>
             <p>Las becas de Fundación Innova México son otorgadas por un año y son renovables siempre y cuando se cumplan con los siguientes requisitos:</p>
             <ul class="requirements-list">
-              <li>Tener buen promedio en lo académico y conducta.</li>
-              <li>Estar al corriente  con el porcentaje asignado de la colegiatura mensual.</li>
-              <li>Que siga la necesidad económica.</li>
-              <li>Participación de la familia en los talleres, al menos 4.</li>
-              <li>Que el reglamento interno se haya cumplido.</li>
-              <li>La Fundación Innova cuente con los fondos para seguir otorgando becas.</li>
+              <li>Tener buen promedio en lo académico y conducta</li>
+              <li>Estar al corriente con los pagos del 25%</li>
+              <li>Que siga la necesidad económica</li>
+              <li>Participación de la familia en los talleres, al menos 4</li>
+              <li>Que el reglamento interno se haya cumplido</li>
+              <li>La Fundación Innova cuente con los fondos para seguir otorgando becas</li>
             </ul>
           </div>
 
           <div style="text-align: center; margin-top: 40px;">
-            <button class="cta-button" id="openConvocatoriaModal" style="margin-bottom: 20px;">CONVOCATORIA 2025-2026</button>
-            <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" class="cta-button" target="_blank" rel="noopener noreferrer">QUIERO POSTULAR A LA BECA</a>
+            <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" class="cta-button" target="_blank" rel="noopener noreferrer">Quiero postular a la beca</a>
           </div>
         </div>
       </div>
@@ -993,13 +769,9 @@
 
   <section id="impacto" class="section">
     <div class="quote-carousel">
-      <div class="quote" id="quote1">
-        Una educación de calidad tiene el poder de transformar a una generación y a una nación.
-        <span class="quote-author">— Ban Ki-moon (ex Secretario General de la ONU)</span>
-      </div>
-      <div class="quote" id="quote2" style="display: none;">
-        El acceso a la educación de calidad es la base para mejorar la vida de las personas y alcanzar el desarrollo sostenible.
-        <span class="quote-author">— Agenda 2030 - Objetivo de Desarrollo Sostenible #4 (ONU)</span>
+      <div class="quote">
+        "La educación es el arma más poderosa que puedes usar para cambiar el mundo."
+        <div class="quote-author">— Nelson Mandela</div>
       </div>
     </div>
   </section>
@@ -1020,6 +792,12 @@
       <div class="grid-container">
         <div class="card">
           <img src="assets/foto3.jpg" alt="Mariana, beneficiaria" style="width: 100%; border-radius: var(--border-radius); margin-bottom: 20px;">
+          <p>"Gracias a Fundación INNOVA México, ahora tengo las herramientas para seguir estudiando y cumplir mis sueños."</p>
+          <small>- Mariana, beneficiaria</small>
+        </div>
+        <div class="card">
+          <p>"Este proyecto cambió nuestra comunidad. Hay esperanza y oportunidades para todos."</p>
+          <small>- Pedro, docente participante</small>
         </div>
       </div>
     </div>
@@ -1081,27 +859,29 @@
             </svg>
             fernanda.lopez@fundacioninnovamx.com
           </a>
-          <a href="tel:+555533 0734" class="contact-link">
+          <a href="tel:+525555085657" class="contact-link">
             <svg viewBox="0 0 24 24">
               <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
             </svg>
-            +52 55 5533 0734
+            +52 55 5508 5657
           </a>
         </div>
       </div>
       <div class="contact-social">
         <p>Síguenos:</p>
         <div class="social-icons">
-          <a href="https://www.facebook.com/profile.php?id=61575632442867" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <img src="assets/facebook-color.svg" alt="Facebook">
           </a>
-          <a href="https://www.instagram.com/mexicochamps/" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <img src="assets/instagram-color.svg" alt="Instagram">
           </a>
-          <a href="https://www.tiktok.com/@mexicochampsoficial" target="_blank" rel="noopener noreferrer">
-            <img src="assets/tiktok-color.svg" alt="TikTok">
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="#000000">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.87 2.87 2.89 2.89 0 0 1-2.87-2.87 2.89 2.89 0 0 1 2.87-2.87c.31 0 .6.05.88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+            </svg>
           </a>
-          <a href="https://www.youtube.com/@M%C3%A9xicoChamps" target="_blank" rel="noopener noreferrer">
+          <a href="#" target="_blank" rel="noopener noreferrer">
             <img src="assets/youtube-color.svg" alt="YouTube">
           </a>
         </div>
@@ -1112,550 +892,10 @@
   <footer>
     <div class="footer-content">
       <p>© Fundación INNOVA México 2025 · Todos los derechos reservados</p>
+      <p style="margin-top: 15px; font-size: 0.85rem;">
+        <a href="aviso-de-privacidad.html" style="color: var(--accent-color); text-decoration: none; opacity: 0.8; transition: opacity 0.3s ease;">Aviso de Privacidad</a>
+      </p>
     </div>
   </footer>
-  
-  <div id="convocatoriaModal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal" id="closeConvocatoriaModal">&times;</span>
-      <div style="text-align:center; margin-bottom: 18px;">
-        <img src="assets/logo-fundacion.png" alt="México Champs" style="max-width: 120px; height: auto; display: block; margin: 0 auto 10px auto;">
-      </div>
-      <h2 style="text-align:center; margin-bottom: 10px; color: #006847;">Convocatoria Oficial 2025-2026. Fundación Innova México</h2>
-      <hr style="margin: 12px 0 18px 0; border: none; border-top: 2px solid #CE1126;">
-      <p style="font-size:1.1rem; text-align:center; margin-bottom: 18px; color: #CE1126;"><strong>🟢 "Estamos buscando a los próximos México Champs"</strong></p>
-      <p><strong>¿Tienes talento y grandes sueños?</strong></p>
-      <p>La Fundación Innova México lanza su Convocatoria 2025 para estudiantes que ingresarán a 1º de secundaria y desean estudiar en <span class="innova-font">Innova Schools</span></p>
-      <p>Buscamos a niñas y niños con talento académico provenientes de familias con recursos económicos limitados, que sueñan con transformar su vida a través de la educación.</p>
-      <h3 style="color:#006847; margin-top: 22px;">🎓 ¿Qué ofrecemos?</h3>
-      <ul style="margin-bottom: 18px;">
-        <li>✅ Becas del 75% del costo escolar anual</li>
-        <li>✅ Acompañamiento psicológico y emocional</li>
-        <li>✅ Programa de liderazgo y formación integral</li>
-        <li>✅ Comunidad educativa innovadora y de alto nivel</li>
-      </ul>
-      <p style="margin-bottom: 18px;">🔸 <strong>La familia deberá cubrir el costo de libros, útiles y uniformes escolares.</strong></p>
-      <h3 style="color:#006847; margin-top: 22px;">📝 Requisitos para postularse:</h3>
-      <ul style="margin-bottom: 18px;">
-        <li>Estar por ingresar a 1º de secundaria en septiembre de 2025</li>
-        <li>Tener un promedio destacado en 6º de primaria</li>
-        <li>Llenar el formulario de postulación en línea</li>
-        <li>Presentar una declaración de ingresos familiares</li>
-        <li>Realizar un estudio socioeconómico (cuota de recuperación: $600 MXN)</li>
-        <li>Presentar examen académico y prueba psicológica en el campus</li>
-        <li>Realizar entrevista en el campus</li>
-      </ul>
-      <h3 style="color:#006847; margin-top: 22px;">📤 ¿Cómo aplicar?</h3>
-      <p>Postúlate en:<br>
-      🔗 www.fundacioninnovamexico.org</p>
-      <p>📅 <strong>Apertura:</strong> Junio 16, 2025<br>
-      📅 <strong>Cierre:</strong> Julio 31, 2025</p>
-      <blockquote style="margin: 20px 0; padding: 15px; font-style: italic; color: #006847; border-left: 4px solid #CE1126; background: #f8f9fa; display: block;">
-        💡 "El acceso a la educación de calidad es la base para mejorar la vida de las personas y alcanzar el desarrollo sostenible."<br>
-        — Agenda 2030 - Objetivo de Desarrollo Sostenible #4 (ONU)
-      </blockquote>
-      <p style="text-align:center; font-weight:bold; color:#CE1126;">Postúlate. Sé parte de una nueva generación de futuros líderes de un México sostenible.</p>
-      <p style="text-align:center; color:#006847; font-weight:bold;">🟢 Estamos buscando a los próximos México Champs.</p>
-    </div>
-  </div>
-
-  <script>
-    // Translations object containing all text content in both languages
-    const translations = {
-      es: {
-        // Navigation
-        quienes: "¿Quiénes Somos?",
-        programas: "Programas",
-        impacto: "Impacto",
-        donar: "Donar",
-        convocatoria: "Convocatoria",
-        aliados: "Aliados",
-        
-        // Hero section
-        heroTitle: "Transformamos vidas a través de una buena educación",
-        heroDescription: "Identificamos escolares de bajos recursos con alto talento académico, artístico o deportivo y los becamos para que reciban una educación de excelencia en",
-        donaAqui: "Dona aquí",
-        
-        // About Us section
-        quienesTitle: "Transformamos vidas a través de una buena educación",
-        quienesDescription: "Somos una asociación sin fines de lucro dedicada a reducir la brecha de inequidad educativa en México. Otorgamos becas escolares a niñas y niños de bajos recursos con talentos excepcionales, para que accedan a una educación de calidad y puedan desarrollar su máximo potencial.",
-        mision: "Misión",
-        misionText: "Ayudar a reducir la brecha de inequidad educativa en el país, a través de becas escolares para niños y niñas con talentos excepcionales de bajos recursos.",
-        vision: "Visión",
-        visionText: "Que ningún talento excepcional se quede sin la posibilidad de cambiar el mundo.",
-        queHacemos: "¿Qué hacemos?",
-        queHacemosText: "Identificamos escolares de bajos recursos con talento académico, artístico o deportivo, y los becamos para que reciban una educación de excelencia en escuelas",
-        
-        // Programs section
-        queIncluye: "¿Qué incluye la beca?",
-        becaDescripcion: "La beca tiene tres componentes: académica, programa de liderazgo y acompañamiento psicológico-emocional.",
-        coberturaAcademica: "Cobertura Académica",
-        coberturaText: "Becas del 75% en colegios",
-        programaLiderazgo: "Programa de Liderazgo",
-        liderazgoText: "Desarrollo integral de habilidades de liderazgo",
-        acompanamiento: "Acompañamiento",
-        acompanamientoText: "Apoyo psicológico-emocional continuo",
-        infoGeneral: "Información General del Proceso",
-        infoGeneralText: "Cada año se publicará una convocatoria especificando los grados participantes.",
-        proximosChamps: "¿Quiénes pueden ser los próximos México Champs?",
-        requisitos: [
-          "Nuestro programa de becas está diseñado para beneficiar a niñas y niños desde 2º de primaria hasta 1º de secundaria. <span style='color: #CE1126; font-style: italic;'>Cada año se publicará una convocatoria especificando los grados participantes.</span>",
-          "Promedio mínimo de notas de 8.5 y buena conducta.",
-          "Talento académico.",
-          "Talento artístico o deportivo.",
-          "El postulante no debe estar cursando sus estudios en",
-          "Existencia de una necesidad económica que será auditada mediante un estudio socioeconómico con una cuota de recuperación de $600."
-        ],
-        renovacion: "Renovación de la beca",
-        renovacionText: "Las becas de Fundación Innova México son otorgadas por un año y son renovables siempre y cuando se cumplan con los siguientes requisitos:",
-        requisitosRenovacion: [
-          "Tener buen promedio en lo académico y conducta.",
-          "Estar al corriente con el porcentaje asignado de la colegiatura mensual.",
-          "Que siga la necesidad económica.",
-          "Participación de la familia en los talleres, al menos 4.",
-          "Que el reglamento interno se haya cumplido.",
-          "La Fundación Innova cuente con los fondos para seguir otorgando becas."
-        ],
-        convocatoria: "CONVOCATORIA 2025-2026",
-        postular: "QUIERO POSTULAR A LA BECA",
-        
-        // Impact section
-        quote: "Una educación de calidad tiene el poder de transformar a una generación y a una nación.",
-        quoteAuthor: "— Ban Ki-moon (ex Secretario General de la ONU)",
-        
-        // Gallery section
-        galeria: "Galería",
-        
-        // Testimonials section
-        testimonios: "Testimonios",
-        
-        // Donate section
-        donarTitle: "Dona / Súmate",
-        donarDescripcion: "En Fundación Innova México creemos que la educación es la herramienta más poderosa para romper el ciclo de pobreza y abrir oportunidades de desarrollo personal, profesional y económico. Por eso, necesitamos de personas como tú para hacerlo posible. Tu donativo contribuye directamente a que un niño o niña con talento acceda a una educación de excelencia, transforme su vida y la de su comunidad para lograr un México sostenible.",
-        queLogra: "💖 ¿Qué logra tu donativo?",
-        beneficios: [
-          "Cubre parte de la colegiatura anual de un estudiante.",
-          "Permite el acceso a programas de liderazgo y apoyo emocional.",
-          "Ayuda a sostener los procesos de selección y acompañamiento."
-        ],
-        formasDonar: "👐 Formas de donar",
-        donativoUnico: "Donativo único",
-        donativoUnicoText: "Aporta la cantidad que tú decidas, cuando tú lo desees.",
-        donativoMensual: "Donativo mensual",
-        donativoMensualText: "Apoya de manera constante a lo largo del año. ¡Cada peso suma!",
-        donacionServicios: "Donación de servicios profesionales",
-        donacionServiciosText: "Para los programas de liderazgo y apoyo psicológico. A través de nuestro programa de voluntariado puedes participar como mentor o facilitador y ayudarnos a formar agentes de cambio.",
-        impactoDonacion: "🎓 Tu apoyo no solo cambia un ciclo escolar. Cambia el rumbo de una vida.",
-        donaAhora: "👉 Dona ahora",
-        empresaAliada: "👉 Quiero ser empresa aliada",
-        contactanos: "👉 Contáctanos para otras formas de apoyo",
-        
-        // Contact section
-        contacto: "Contacto",
-        contactoDescripcion: "¿Tienes dudas o quieres colaborar? ¡Contáctanos!",
-        siguenos: "Síguenos:",
-        
-        // Footer
-        derechos: "© Fundación INNOVA México 2025 · Todos los derechos reservados",
-
-        // Modal content
-        convocatoriaTitulo: "Convocatoria Oficial 2025 - Fundación Innova México",
-        convocatoriaSubtitulo: "🟢 \"Estamos buscando a los próximos México Champs\"",
-        convocatoriaTalento: "¿Tienes talento y grandes sueños?",
-        convocatoriaDescripcion: "La Fundación Innova México lanza su Convocatoria 2025 para estudiantes que ingresarán a 1º de secundaria y desean estudiar en",
-        convocatoriaBuscamos: "Buscamos a niñas y niños con talento académico provenientes de familias con recursos económicos limitados, que sueñan con transformar su vida a través de la educación.",
-        convocatoriaOfrecemos: "🎓 ¿Qué ofrecemos?",
-        convocatoriaBeneficios: [
-          "✅ Becas del 75% del costo escolar anual",
-          "✅ Acompañamiento psicológico y emocional",
-          "✅ Programa de liderazgo y formación integral",
-          "✅ Comunidad educativa innovadora y de alto nivel"
-        ],
-        convocatoriaNota: "🔸 La familia deberá cubrir el costo de libros, útiles y uniformes escolares.",
-        convocatoriaRequisitos: "📝 Requisitos para postularse:",
-        convocatoriaRequisitosLista: [
-          "Estar por ingresar a 1º de secundaria en septiembre de 2025",
-          "Tener un promedio destacado en 6º de primaria",
-          "Llenar el formulario de postulación en línea",
-          "Presentar una declaración de ingresos familiares",
-          "Realizar un estudio socioeconómico (costo: $600 a $1,100 MXN)",
-          "Presentar examen académico y prueba psicológica en el campus",
-          "Realizar entrevista en el campus"
-        ],
-
-        convocatoriaAplicar: "📤 ¿Cómo aplicar?",
-        convocatoriaPostulacion: "Postúlate en:",
-        convocatoriaLink: "🔗 www.fundacioninnovamexico.org/convocatoria2025 (en construcción)",
-        convocatoriaFechas: [
-          "📅 Apertura: Junio 16, 2025",
-          "📅 Cierre: Julio 31, 2025"
-        ],
-        convocatoriaCita: "💡 \"El acceso a la educación de calidad es la base para mejorar la vida de las personas y alcanzar el desarrollo sostenible.\"",
-        convocatoriaCitaAutor: "— Agenda 2030 - Objetivo de Desarrollo Sostenible #4 (ONU)",
-        convocatoriaLlamado: "Postúlate. Sé parte de una nueva generación de futuros líderes de un México sostenible.",
-        convocatoriaCierre: "🟢 Estamos buscando a los próximos México Champs."
-      },
-      en: {
-        // Navigation
-        quienes: "About Us",
-        programas: "Programs",
-        impacto: "Impact",
-        donar: "Donate",
-        convocatoria: "Call for Applications",
-        aliados: "Partners",
-        
-        // Hero section
-        heroTitle: "Transforming lives through quality education",
-        heroDescription: "We identify low-income students with exceptional academic, artistic, or athletic talent and provide them with scholarships to receive excellence education at",
-        donaAqui: "Donate here",
-        
-        // About Us section
-        quienesTitle: "Transforming lives through quality education",
-        quienesDescription: "We are a non-profit organization dedicated to reducing the educational inequality gap in Mexico. We provide scholarships to exceptional low-income children, enabling them to access quality education and reach their full potential.",
-        mision: "Mission",
-        misionText: "To help reduce the educational inequality gap in the country through scholarships for exceptional low-income children.",
-        vision: "Vision",
-        visionText: "That no exceptional talent is left without the possibility of changing the world.",
-        queHacemos: "What we do",
-        queHacemosText: "We identify low-income students with academic, artistic, or athletic talent and provide them with scholarships to receive excellence education at",
-        
-        // Programs section
-        queIncluye: "What does the scholarship include?",
-        becaDescripcion: "The scholarship has three components: academic, leadership program, and psychological-emotional support.",
-        coberturaAcademica: "Academic Coverage",
-        coberturaText: "75% to 100% scholarships at",
-        programaLiderazgo: "Leadership Program",
-        liderazgoText: "Comprehensive development of leadership skills",
-        acompanamiento: "Support",
-        acompanamientoText: "Continuous psychological and emotional support",
-        infoGeneral: "General Process Information",
-        infoGeneralText: "Each year we conduct calls for applications where we evaluate the academic potential of applicants, their school adaptation, and the family's socioeconomic level.",
-        proximosChamps: "Who can be the next Mexico Champs?",
-        requisitos: [
-          "Our scholarship program is designed to benefit children from 2nd grade through 1st year of middle school. <span style='color: #CE1126; font-style: italic;'>Each year we conduct calls for applications where we evaluate the academic potential of applicants, their school adaptation, and the family's socioeconomic level.</span>",
-          "Minimum grade average of 8.5 and good conduct.",
-          "Academic talent.",
-          "Artistic or athletic talent.",
-          "The applicant must not be currently studying at",
-          "Existence of financial need that will be audited through a socioeconomic study at a cost of $600."
-        ],
-        renovacion: "Scholarship renewal",
-        renovacionText: "Fundación Innova México scholarships are granted for one year and are renewable as long as the following requirements are met:",
-        requisitosRenovacion: [
-          "Maintain good academic average and conduct.",
-          "Stay current with the assigned percentage of monthly tuition.",
-          "Continued financial need.",
-          "Family participation in workshops, at least 4.",
-          "Compliance with internal regulations.",
-          "Fundación Innova has the funds to continue granting scholarships."
-        ],
-        convocatoria: "2025-2026 CALL FOR APPLICATIONS",
-        postular: "I WANT TO APPLY FOR THE SCHOLARSHIP",
-        
-        // Impact section
-        quote: "Quality education has the power to transform a generation and a nation.",
-        quoteAuthor: "— Ban Ki-moon (former UN Secretary-General)",
-        
-        // Gallery section
-        galeria: "Gallery",
-        
-        // Testimonials section
-        testimonios: "Testimonials",
-        
-        // Donate section
-        donarTitle: "Donate / Join Us",
-        donarDescripcion: "At Fundación Innova México, we believe that education is the most powerful tool to break the cycle of poverty and open opportunities for personal, professional, and economic development. That's why we need people like you to make it possible. Your donation directly contributes to enabling a talented child to access excellence education, transform their life and their community to achieve a sustainable Mexico.",
-        queLogra: "💖 What does your donation achieve?",
-        beneficios: [
-          "Covers part of a student's annual tuition.",
-          "Enables access to leadership programs and emotional support.",
-          "Helps sustain selection and support processes."
-        ],
-        formasDonar: "👐 Ways to donate",
-        donativoUnico: "One-time donation",
-        donativoUnicoText: "Contribute the amount you decide, when you want.",
-        donativoMensual: "Monthly donation",
-        donativoMensualText: "Support consistently throughout the year. Every peso counts!",
-        donacionServicios: "Professional services donation",
-        donacionServiciosText: "For leadership programs and psychological support. Through our volunteer program, you can participate as a mentor or facilitator and help us form agents of change.",
-        impactoDonacion: "🎓 Your support doesn't just change a school year. It changes the course of a life.",
-        donaAhora: "👉 Donate now",
-        empresaAliada: "👉 I want to be a partner company",
-        contactanos: "👉 Contact us for other ways to support",
-        
-        // Contact section
-        contacto: "Contact",
-        contactoDescripcion: "Do you have questions or want to collaborate? Contact us!",
-        siguenos: "Follow us:",
-        
-        // Footer
-        derechos: "© Fundación INNOVA México 2025 · All rights reserved",
-
-        // Modal content
-        convocatoriaTitulo: "Official Call for Applications 2025 - Fundación Innova México",
-        convocatoriaSubtitulo: "🟢 \"We are looking for the next Mexico Champs\"",
-        convocatoriaTalento: "Do you have talent and big dreams?",
-        convocatoriaDescripcion: "Fundación Innova México launches its 2025 Call for Applications for students entering 1st year of middle school who wish to study at",
-        convocatoriaBuscamos: "We are looking for academically talented children from low-income families who dream of transforming their lives through education.",
-        convocatoriaOfrecemos: "🎓 What do we offer?",
-        convocatoriaBeneficios: [
-          "✅ 75% to 100% scholarships of annual school cost",
-          "✅ Psychological and emotional support",
-          "✅ Leadership program and comprehensive training",
-          "✅ Innovative and high-level educational community"
-        ],
-        convocatoriaNota: "🔸 The family must cover the cost of books, supplies, and school uniforms.",
-        convocatoriaRequisitos: "📝 Requirements to apply:",
-        convocatoriaRequisitosLista: [
-          "Be entering 1st year of middle school in September 2025",
-          "Have an outstanding average in 6th grade",
-          "Complete the online application form",
-          "Submit a family income statement",
-          "Undergo a socioeconomic study (estimated cost: $600 MXN)",
-          "Take academic exam and psychological test at the campus",
-          "Complete campus interview"
-   
-        ],
-        convocatoriaAplicar: "📤 How to apply?",
-        convocatoriaPostulacion: "Apply at:",
-        convocatoriaLink: "🔗 www.fundacioninnovamexico.org/convocatoria2025 (under construction)",
-        convocatoriaFechas: [
-          "📅 Opening: June 10, 2025",
-          "📅 Closing: July 15, 2025"
-        ],
-        convocatoriaCita: "💡 \"Access to quality education is the foundation for improving people's lives and achieving sustainable development.\"",
-        convocatoriaCitaAutor: "— 2030 Agenda - Sustainable Development Goal #4 (UN)",
-        convocatoriaLlamado: "Apply. Be part of a new generation of future leaders for a sustainable Mexico.",
-        convocatoriaCierre: "🟢 We are looking for the next Mexico Champs."
-      }
-    };
-
-    // Function to update the language
-    function updateLanguage(lang) {
-      // Update navigation
-      document.querySelector('a[href="#quienes"]').textContent = translations[lang].quienes;
-      document.querySelector('a[href="#programas"]').textContent = translations[lang].programas;
-      document.querySelector('a[href="#impacto"]').textContent = translations[lang].impacto;
-      document.querySelector('a[href="#donar"]').textContent = translations[lang].donar;
-      document.querySelector('a[href="#convocatoria"]').textContent = translations[lang].convocatoria;
-      document.querySelector('a[href="https://innovaschools.edu.mx/"]').textContent = translations[lang].aliados;
-      
-      // Update hero section
-      document.querySelector('.hero-title').textContent = translations[lang].heroTitle;
-      document.querySelector('.hero-description').innerHTML = translations[lang].heroDescription + ' <span class="innova-font">Innova Schools</span>.';
-      document.querySelector('.cta-button').textContent = translations[lang].donaAqui;
-      
-      // Update About Us section
-      document.querySelector('#quienes .section-title').textContent = translations[lang].quienesTitle;
-      document.querySelector('#quienes p').textContent = translations[lang].quienesDescription;
-      document.querySelector('.mission-vision-card:first-child h3').textContent = translations[lang].mision;
-      document.querySelector('.mission-vision-card:first-child p').textContent = translations[lang].misionText;
-      document.querySelector('.mission-vision-card:last-child h3').textContent = translations[lang].vision;
-      document.querySelector('.mission-vision-card:last-child p').textContent = translations[lang].visionText;
-      document.querySelector('#quienes h2:last-child').textContent = translations[lang].queHacemos;
-      document.querySelector('#quienes p:last-child').innerHTML = translations[lang].queHacemosText + ' <span class="innova-font">Innova Schools</span>.';
-      
-      // Update Programs section
-      document.querySelector('.scholarship-card h3').textContent = translations[lang].queIncluye;
-      document.querySelector('.scholarship-card p').textContent = translations[lang].becaDescripcion;
-      document.querySelector('.scholarship-benefit:first-child h4').textContent = translations[lang].coberturaAcademica;
-      document.querySelector('.scholarship-benefit:first-child p').innerHTML = translations[lang].coberturaText + ' <span class="innova-font">Innova Schools</span> and 100% of Registration';
-      document.querySelector('.scholarship-benefit:nth-child(2) h4').textContent = translations[lang].programaLiderazgo;
-      document.querySelector('.scholarship-benefit:nth-child(2) p').textContent = translations[lang].liderazgoText;
-      document.querySelector('.scholarship-benefit:last-child h4').textContent = translations[lang].acompanamiento;
-      document.querySelector('.scholarship-benefit:last-child p').textContent = translations[lang].acompanamientoText;
-      
-      // Update Impact section
-      document.querySelector('.quote').innerHTML = translations[lang].quote + 
-        '<span class="quote-author">' + translations[lang].quoteAuthor + '</span>';
-      
-      // Update Gallery section
-      document.querySelector('#galeria .section-title').textContent = translations[lang].galeria;
-      
-      // Update Testimonials section
-      document.querySelector('#testimonios .section-title').textContent = translations[lang].testimonios;
-      
-      // Update Donate section
-      document.querySelector('#donar .section-title').textContent = translations[lang].donarTitle;
-      document.querySelector('#donar .section-content > p').textContent = translations[lang].donarDescripcion;
-      document.querySelector('.donation-benefits h3').textContent = translations[lang].queLogra;
-      
-      // Update donation benefits list
-      const beneficiosList = document.querySelector('.donation-benefits ul');
-      beneficiosList.innerHTML = '';
-      translations[lang].beneficios.forEach(beneficio => {
-        const li = document.createElement('li');
-        li.textContent = beneficio;
-        beneficiosList.appendChild(li);
-      });
-      
-      document.querySelector('.donation-options h3').textContent = translations[lang].formasDonar;
-      document.querySelector('.donation-type:nth-child(1) h4').textContent = translations[lang].donativoUnico;
-      document.querySelector('.donation-type:nth-child(1) p').textContent = translations[lang].donativoUnicoText;
-      document.querySelector('.donation-type:nth-child(2) h4').textContent = translations[lang].donativoMensual;
-      document.querySelector('.donation-type:nth-child(2) p').textContent = translations[lang].donativoMensualText;
-      document.querySelector('.donation-type:nth-child(3) h4').textContent = translations[lang].donacionServicios;
-      document.querySelector('.donation-type:nth-child(3) p').textContent = translations[lang].donacionServiciosText;
-      
-      document.querySelector('.donation-impact').textContent = translations[lang].impactoDonacion;
-      
-      const ctaButtons = document.querySelectorAll('.donation-cta-buttons .cta-button');
-      ctaButtons[0].textContent = translations[lang].donaAhora;
-      ctaButtons[1].textContent = translations[lang].empresaAliada;
-      ctaButtons[2].textContent = translations[lang].contactanos;
-      
-      // Update Contact section
-      document.querySelector('#contacto .section-title').textContent = translations[lang].contacto;
-      document.querySelector('#contacto p').textContent = translations[lang].contactoDescripcion;
-      document.querySelector('.contact-social p').textContent = translations[lang].siguenos;
-      
-      // Update Footer
-      document.querySelector('.footer-content p').textContent = translations[lang].derechos;
-
-      // Update Modal content
-      const modalContent = document.querySelector('.modal-content');
-      if (modalContent) {
-        modalContent.querySelector('h2').textContent = translations[lang].convocatoriaTitulo;
-        modalContent.querySelector('p:nth-of-type(1)').innerHTML = translations[lang].convocatoriaSubtitulo;
-        modalContent.querySelector('p:nth-of-type(2)').innerHTML = translations[lang].convocatoriaTalento;
-        modalContent.querySelector('p:nth-of-type(4)').textContent = translations[lang].convocatoriaBuscamos;
-        modalContent.querySelector('h3:nth-of-type(1)').textContent = translations[lang].convocatoriaOfrecemos;
-        
-        const beneficiosList = modalContent.querySelector('ul:nth-of-type(1)');
-        beneficiosList.innerHTML = '';
-        translations[lang].convocatoriaBeneficios.forEach(beneficio => {
-          const li = document.createElement('li');
-          li.textContent = beneficio;
-          beneficiosList.appendChild(li);
-        });
-
-        modalContent.querySelector('p:nth-of-type(5)').innerHTML = translations[lang].convocatoriaNota;
-        modalContent.querySelector('h3:nth-of-type(2)').textContent = translations[lang].convocatoriaRequisitos;
-        
-        const requisitosList = modalContent.querySelector('ul:nth-of-type(2)');
-        requisitosList.innerHTML = '';
-        translations[lang].convocatoriaRequisitosLista.forEach(requisito => {
-          const li = document.createElement('li');
-          li.textContent = requisito;
-          requisitosList.appendChild(li);
-        });
-
-        modalContent.querySelector('h3:nth-of-type(3)').textContent = translations[lang].convocatoriaCampus;
-        
-        const campusList = modalContent.querySelector('ul:nth-of-type(3)');
-        campusList.innerHTML = '';
-        translations[lang].convocatoriaCampusLista.forEach(campus => {
-          const li = document.createElement('li');
-          li.innerHTML = campus;
-          campusList.appendChild(li);
-        });
-
-        modalContent.querySelector('h3:nth-of-type(4)').textContent = translations[lang].convocatoriaAplicar;
-        modalContent.querySelector('p:nth-of-type(6)').innerHTML = translations[lang].convocatoriaPostulacion + '<br>' + translations[lang].convocatoriaLink;
-        
-        const fechasList = modalContent.querySelector('p:nth-of-type(7)');
-        fechasList.innerHTML = translations[lang].convocatoriaFechas.join('<br>');
-
-        const blockquote = modalContent.querySelector('blockquote');
-        blockquote.innerHTML = translations[lang].convocatoriaCita + '<br>' + translations[lang].convocatoriaCitaAutor;
-
-        modalContent.querySelector('p:nth-of-type(8)').textContent = translations[lang].convocatoriaLlamado;
-        modalContent.querySelector('p:nth-of-type(9)').textContent = translations[lang].convocatoriaCierre;
-      }
-      
-      // Update language selector buttons
-      const esBtn = document.getElementById('esBtn');
-      const enBtn = document.getElementById('enBtn');
-      
-      if (lang === 'es') {
-        esBtn.style.color = 'var(--secondary-color)';
-        enBtn.style.color = 'var(--accent-color)';
-      } else {
-        esBtn.style.color = 'var(--accent-color)';
-        enBtn.style.color = 'var(--secondary-color)';
-      }
-      
-      // Save language preference
-      localStorage.setItem('preferredLanguage', lang);
-    }
-
-    // Add click event listeners to language selector
-    document.addEventListener('DOMContentLoaded', function() {
-      const esBtn = document.getElementById('esBtn');
-      const enBtn = document.getElementById('enBtn');
-      
-      esBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        updateLanguage('es');
-      });
-      
-      enBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        updateLanguage('en');
-      });
-      
-      // Load saved language preference
-      const savedLang = localStorage.getItem('preferredLanguage') || 'es';
-      updateLanguage(savedLang);
-    });
-
-    // Modal functionality
-    const modal = document.getElementById('convocatoriaModal');
-    const openModalBtn = document.getElementById('openConvocatoriaModal');
-    const closeModalBtn = document.getElementById('closeConvocatoriaModal');
-    const convocatoriaLink = document.querySelector('a[href="#convocatoria"]');
-
-    if (openModalBtn && modal && closeModalBtn) {
-      openModalBtn.addEventListener('click', function() {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-      });
-
-      // Add click event for the convocatoria link
-      convocatoriaLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      });
-
-      closeModalBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-        document.body.style.overflow = ''; // Restore scrolling
-      });
-
-      // Close modal when clicking outside
-      window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-          modal.style.display = 'none';
-          document.body.style.overflow = ''; // Restore scrolling
-        }
-      });
-
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.style.display === 'flex') {
-          modal.style.display = 'none';
-          document.body.style.overflow = ''; // Restore scrolling
-        }
-      });
-    }
-
-    // Quote rotation functionality
-    function rotateQuotes() {
-      const quote1 = document.getElementById('quote1');
-      const quote2 = document.getElementById('quote2');
-      
-      if (quote1.style.display !== 'none') {
-        quote1.style.display = 'none';
-        quote2.style.display = 'block';
-      } else {
-        quote1.style.display = 'block';
-        quote2.style.display = 'none';
-      }
-    }
-
-    // Rotate quotes every 5 seconds
-    setInterval(rotateQuotes, 5000);
-  </script>
 </body>
 </html>
