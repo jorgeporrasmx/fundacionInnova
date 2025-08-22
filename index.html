@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>México Champs</title>
+  <meta name="description" content="Fundación Innova México - Transformamos vidas a través de una buena educación. Becas escolares para niños con talentos excepcionales." />
+  <meta name="keywords" content="fundación, innova, méxico, becas, educación, talentos, escolares" />
+  <meta name="author" content="Fundación Innova México" />
+  <meta property="og:title" content="México Champs - Fundación Innova México" />
+  <meta property="og:description" content="Transformamos vidas a través de una buena educación" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/Logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>México Champs - Fundación Innova México</title>
+  <link rel="icon" type="image/svg+xml" href="assets/Logo.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
   <style>
     * { 
@@ -37,7 +46,7 @@
       background-color: var(--primary-color);
       padding: 10px 40px;
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       align-items: center;
       position: fixed;
       width: 100%;
@@ -139,6 +148,7 @@
     .logo-face img {
       width: 100%;
       height: auto;
+      display: block;
     }
 
     @keyframes logoFlip {
@@ -152,6 +162,8 @@
         transform: rotateY(360deg);
       }
     }
+
+
 
     .hero-content {
       flex: 1;
@@ -231,6 +243,10 @@
 
       .nav-logo {
         width: 120px;
+      }
+
+      .nav-logo img {
+        height: 30px;
       }
 
       .nav-links {
@@ -653,6 +669,9 @@
 </head>
 <body>
   <nav class="top-nav">
+    <div class="nav-logo">
+      <img src="assets/Logo.svg" alt="México Champs" style="height: 40px; width: auto;">
+    </div>
     <div class="nav-links">
       <a href="#quienes">¿Quiénes Somos?</a>
       <a href="#programas">Programas</a>
@@ -670,10 +689,10 @@
     <div class="logo-container">
       <div class="logo-flipper">
         <div class="logo-face logo-front">
-          <img src="assets/logo.svg" alt="México Champs">
+          <img src="assets/Logo.svg" alt="Logo México Champs">
         </div>
         <div class="logo-face logo-back">
-          <img src="assets/Logo 2.svg" alt="Fundación Innova">
+          <img src="assets/Logo 2.svg" alt="Logo Fundación Innova">
         </div>
       </div>
     </div>
@@ -840,8 +859,8 @@
       <p class="donation-impact">🎓 Tu apoyo no solo cambia un ciclo escolar. Cambia el rumbo de una vida.</p>
 
       <div class="donation-cta-buttons">
-        <a href="#" class="cta-button">👉 Dona ahora</a>
-        <a href="#" class="cta-button">👉 Quiero ser empresa aliada</a>
+        <a href="mailto:fernanda.lopez@fundacioninnovamx.com?subject=Donación%20Fundación%20Innova" class="cta-button">👉 Dona ahora</a>
+        <a href="mailto:fernanda.lopez@fundacioninnovamx.com?subject=Empresa%20Aliada%20Fundación%20Innova" class="cta-button">👉 Quiero ser empresa aliada</a>
         <a href="#contacto" class="cta-button">👉 Contáctanos para otras formas de apoyo</a>
       </div>
     </div>
@@ -897,5 +916,7 @@
       </p>
     </div>
   </footer>
+
+
 </body>
 </html>
