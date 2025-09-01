@@ -766,7 +766,7 @@
       <a href="#programas">Programas</a>
       <a href="#impacto">Impacto</a>
       <a href="#donar">Donar</a>
-      <a href="#convocatoria">Convocatoria</a>
+      <a href="#convocatoria">Convocatoria 2025-2026</a>
       <div class="language-selector">
         <a href="#" style="color: var(--secondary-color);">ES</a>
         <span>|</span>
@@ -842,17 +842,17 @@
         </div>
 
         <div class="scholarship-card">
-          <h3>¿Cómo postular?</h3>
-          <p>Cada año realizamos convocatorias en las que evaluamos el potencial académico de quien postula, su adaptación escolar y el nivel socioeconómico de la familia.</p>
+          <h3>Información General del Proceso</h3>
+          <p style="margin-bottom: 30px;">¿Quiénes pueden ser los próximos México Champs?</p>
           
           <h4>Requisitos de Postulación</h4>
           <ul class="requirements-list">
-            <li>Estudiantes que ingresen desde 2do primaria hasta 1ro de secundaria</li>
+            <li>Nuestro programa de becas está diseñado para beneficiar a niñas y niños desde 2º de primaria hasta 1º de secundaria. <span style="color: #CE1126; font-style: italic;">Cada año se publicará una convocatoria especificando los grados participantes.</span></li>
             <li>Promedio mínimo de notas de 8.5 y buena conducta</li>
             <li>Talento académico</li>
             <li>Talento artístico o deportivo</li>
             <li>El postulante no debe estar cursando sus estudios en Innova Schools México</li>
-            <li>Existencia de una necesidad económica que será auditada mediante un estudio socioeconómico con un costo de $700</li>
+            <li>Existencia de una necesidad económica que será auditada mediante un estudio socioeconómico con una cuota de recuperación de $600</li>
           </ul>
 
           <div class="renewal-requirements">
@@ -860,7 +860,7 @@
             <p>Las becas de Fundación Innova México son otorgadas por un año y son renovables siempre y cuando se cumplan con los siguientes requisitos:</p>
             <ul class="requirements-list">
               <li>Tener buen promedio en lo académico y conducta</li>
-              <li>Estar al corriente con los pagos del 25%</li>
+              <li>Estar al corriente con el porcentaje asignado de la colegiatura mensual</li>
               <li>Que siga la necesidad económica</li>
               <li>Participación de la familia en los talleres, al menos 4</li>
               <li>Que el reglamento interno se haya cumplido</li>
@@ -869,7 +869,10 @@
           </div>
 
           <div style="text-align: center; margin-top: 40px;">
-            <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" class="cta-button" target="_blank" rel="noopener noreferrer">Quiero postular a la beca</a>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+              <a href="#" class="cta-button" id="openConvocatoriaModal" style="background-color: var(--primary-color);">CONVOCATORIA 2025-2026</a>
+              <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" class="cta-button" target="_blank" rel="noopener noreferrer">QUIERO POSTULAR A LA BECA</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1067,6 +1070,7 @@
     const modal = document.getElementById('convocatoriaModal');
     const closeModalBtn = document.getElementById('closeConvocatoriaModal');
     const convocatoriaLink = document.querySelector('a[href="#convocatoria"]');
+    const openModalBtn = document.getElementById('openConvocatoriaModal');
 
     if (convocatoriaLink && modal && closeModalBtn) {
       // Add click event for the convocatoria link
@@ -1075,6 +1079,15 @@
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
       });
+
+      // Add click event for the open modal button
+      if (openModalBtn) {
+        openModalBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+      }
 
       closeModalBtn.addEventListener('click', function() {
         modal.style.display = 'none';
