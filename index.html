@@ -99,6 +99,39 @@
       opacity: 0.5;
     }
 
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--accent-color);
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
     .hero-section {
       min-height: 100vh;
       width: 100%;
@@ -249,8 +282,43 @@
         height: 30px;
       }
 
+      .menu-toggle {
+        display: flex;
+      }
+
       .nav-links {
-        display: none;
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        width: 250px;
+        height: calc(100vh - 60px);
+        padding: 30px 20px;
+        gap: 20px;
+        align-items: flex-start;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+        overflow-y: auto;
+        z-index: 999;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .language-selector {
+        margin-left: 0;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.3);
+        width: 100%;
       }
 
       .hero-section {
@@ -666,92 +734,70 @@
       fill: currentColor;
     }
 
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .modal-content {
-      background-color: white;
-      padding: 30px;
+    .results-card {
+      background: white;
+      padding: 40px;
       border-radius: var(--border-radius);
-      max-width: 600px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin: 0 auto;
+      max-width: 900px;
+      border-top: 4px solid var(--primary-color);
     }
 
-    .close-modal {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--primary-color);
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .close-modal:hover {
-      color: var(--secondary-color);
-    }
-
-    .modal-content h2 {
-      color: var(--primary-color);
-      margin-bottom: 20px;
+    .results-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-color);
       text-align: center;
+      margin-bottom: 30px;
     }
 
-    .modal-content h3 {
-      color: var(--primary-color);
-      margin: 20px 0 10px 0;
-      font-size: 1.3rem;
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
     }
 
-    .modal-content p {
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
-
-    .modal-content ul {
-      margin: 15px 0;
-      padding-left: 20px;
-    }
-
-    .modal-content li {
-      margin-bottom: 8px;
-      line-height: 1.5;
-    }
-
-    .modal-content blockquote {
+    .result-item {
       background: var(--light-bg);
-      padding: 15px;
-      border-left: 4px solid var(--primary-color);
-      margin: 20px 0;
-      font-style: italic;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      border-left: 4px solid var(--secondary-color);
+      transition: transform 0.3s ease;
     }
 
-    .innova-font {
-      font-weight: 600;
-      color: var(--primary-color);
+    .result-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .results-note {
+      background: #fff9e6;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 30px 0;
+      border-left: 4px solid #ffc107;
+    }
+
+    .results-note p {
+      color: #856404;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
     }
 
     @media (max-width: 768px) {
-      .modal-content {
-        padding: 20px;
-        margin: 10px;
+      .results-card {
+        padding: 25px;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -761,12 +807,17 @@
     <div class="nav-logo">
       <img src="assets/Logo.svg" alt="México Champs" style="height: 40px; width: auto;">
     </div>
-    <div class="nav-links">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
       <a href="#quienes">¿Quiénes Somos?</a>
       <a href="#programas">Programas</a>
+      <a href="#resultados" style="color: #FFD700; font-weight: 700;">Resultados 2025</a>
       <a href="#impacto">Impacto</a>
       <a href="#donar">Donar</a>
-      <a href="#convocatoria">Convocatoria 2025-2026</a>
       <div class="language-selector">
         <a href="#" style="color: var(--secondary-color);">ES</a>
         <span>|</span>
@@ -793,7 +844,7 @@
     </div>
   </section>
 
-  <a href="https://wa.me/525555330734" class="floating-whatsapp" target="_blank" rel="noopener noreferrer">
+  <a href="https://wa.me/525555085657" class="floating-whatsapp" target="_blank" rel="noopener noreferrer">
     <svg viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
@@ -842,18 +893,17 @@
         </div>
 
         <div class="scholarship-card">
-          <h3>Información General del Proceso</h3>
-          <p style="margin-bottom: 30px;">¿Quiénes pueden ser los próximos México Champs?</p>
+          <h3>¿Cómo postular?</h3>
+          <p>Cada año realizamos convocatorias en las que evaluamos el potencial académico de quien postula, su adaptación escolar y el nivel socioeconómico de la familia.</p>
           
           <h4>Requisitos de Postulación</h4>
           <ul class="requirements-list">
-            <li>Nuestro programa de becas está diseñado para beneficiar a niñas y niños desde 2º de primaria hasta 1º de secundaria. <span style="color: #CE1126; font-style: italic;">Cada año se publicará una convocatoria especificando los grados participantes.</span></li>
-            <li>Promedio mínimo de notas de 8.5 
-              y buena conducta</li>
+            <li>Estudiantes que ingresen desde 2do primaria hasta 2do secundaria</li>
+            <li>Promedio mínimo de notas de 8.5 y buena conducta</li>
             <li>Talento académico</li>
             <li>Talento artístico o deportivo</li>
             <li>El postulante no debe estar cursando sus estudios en Innova Schools México</li>
-            <li>Existencia de una necesidad económica que será auditada mediante un estudio socioeconómico con una cuota de recuperación de $600</li>
+            <li>Existencia de una necesidad económica que será auditada mediante un estudio socioeconómico con un costo de $700</li>
           </ul>
 
           <div class="renewal-requirements">
@@ -861,7 +911,7 @@
             <p>Las becas de Fundación Innova México son otorgadas por un año y son renovables siempre y cuando se cumplan con los siguientes requisitos:</p>
             <ul class="requirements-list">
               <li>Tener buen promedio en lo académico y conducta</li>
-              <li>Estar al corriente con el porcentaje asignado de la colegiatura mensual</li>
+              <li>Estar al corriente con los pagos del 25%</li>
               <li>Que siga la necesidad económica</li>
               <li>Participación de la familia en los talleres, al menos 4</li>
               <li>Que el reglamento interno se haya cumplido</li>
@@ -870,11 +920,37 @@
           </div>
 
           <div style="text-align: center; margin-top: 40px;">
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-              <a href="#" class="cta-button" id="openConvocatoriaModal" style="background-color: var(--primary-color);">CONVOCATORIA 2025-2026</a>
-              <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" class="cta-button" target="_blank" rel="noopener noreferrer">QUIERO POSTULAR A LA BECA</a>
-            </div>
+            <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" class="cta-button" target="_blank" rel="noopener noreferrer">Quiero postular a la beca</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resultados" class="section">
+    <div class="section-content">
+      <h2 class="section-title">Resultados de la Convocatoria 2025</h2>
+      
+      <div class="results-card">
+        <p class="results-intro">
+          Agradecemos a todas las familias que participaron en la convocatoria 2025. Tras un proceso riguroso de evaluación, presentamos a los niños y niñas seleccionados para recibir la beca de Fundación Innova México.
+        </p>
+        
+        <h3 style="color: var(--primary-color); margin: 30px 0 20px 0; font-size: 1.4rem;">Estudiantes seleccionados:</h3>
+        
+        <div class="results-grid">
+          <div class="result-item">41104414619</div>
+          <div class="result-item">41078969694</div>
+          <div class="result-item">41104418860</div>
+          <div class="result-item">41504956851</div>
+        </div>
+        
+        <div class="results-note">
+          <p>Si tu número de folio aparece en la lista, recibirás un correo electrónico con los siguientes pasos del proceso de inscripción.</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="mailto:fernanda.lopez@fundacioninnovamx.com?subject=Consulta%20Resultados%20Convocatoria%202025" class="cta-button">Consulta más información aquí</a>
         </div>
       </div>
     </div>
@@ -972,30 +1048,22 @@
             </svg>
             fernanda.lopez@fundacioninnovamx.com
           </a>
-          <a href="tel:+525555330734" class="contact-link">
+          <a href="tel:+525555085657" class="contact-link">
             <svg viewBox="0 0 24 24">
               <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
             </svg>
-            +52 55 5533 0734
+            +52 55 5508 5657
           </a>
         </div>
       </div>
       <div class="contact-social">
         <p>Síguenos:</p>
         <div class="social-icons">
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61575632442867" target="_blank" rel="noopener noreferrer">
             <img src="assets/facebook-color.svg" alt="Facebook">
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/mexicochamps/" target="_blank" rel="noopener noreferrer">
             <img src="assets/instagram-color.svg" alt="Instagram">
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="#000000">
-              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.87 2.87 2.89 2.89 0 0 1-2.87-2.87 2.89 2.89 0 0 1 2.87-2.87c.31 0 .6.05.88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
-            </svg>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="assets/youtube-color.svg" alt="YouTube">
           </a>
         </div>
       </div>
@@ -1010,107 +1078,35 @@
       </p>
     </div>
   </footer>
-  
-  <!-- Modal de Convocatoria 2025-2026 -->
-  <div id="convocatoriaModal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal" id="closeConvocatoriaModal">&times;</span>
-      <div style="text-align:center; margin-bottom: 18px;">
-        <img src="assets/Logo.svg" alt="México Champs" style="max-width: 120px; height: auto; display: block; margin: 0 auto 10px auto;">
-      </div>
-      <h2 style="text-align:center; margin-bottom: 10px; color: #006847;">Convocatoria Oficial 2025-2026. Fundación Innova México</h2>
-      
-      <hr style="margin: 12px 0 18px 0; border: none; border-top: 2px solid #CE1126;">
-      <p style="font-size:1.1rem; text-align:center; margin-bottom: 18px; color: #CE1126;"><strong>🟢 "Estamos buscando a los próximos México Champs"</strong></p>
-      
-      <p><strong>¿Tienes talento y grandes sueños?</strong></p>
-      <p>La Fundación Innova México lanza su Convocatoria 2025 para estudiantes que ingresarán a 1º de secundaria y desean estudiar en <span class="innova-font">Innova Schools</span></p>
-      
-      <p>Buscamos a niñas y niños con talento académico provenientes de familias con recursos económicos limitados, que sueñan con transformar su vida a través de la educación.</p>
-      
-      <h3>🎓 ¿Qué ofrecemos?</h3>
-      <ul>
-        <li>✅ Becas hasta del  75% del costo escolar anual</li>
-        <li>✅ Acompañamiento psicológico y emocional</li>
-        <li>✅ Programa de liderazgo y formación integral</li>
-        <li>✅ Comunidad educativa innovadora y de alto nivel</li>
-      </ul>
-      
-      <p>🔸 La familia deberá cubrir el costo de libros, útiles y uniformes escolares.</p>
-      
-      <h3>📝 Requisitos para postularse:</h3>
-      <ul>
-        <li>Estar por ingresar a 1º de secundaria en septiembre de 2025</li>
-        <li>Tener un promedio destacado en 6º de primaria</li>
-        <li>Llenar el formulario de postulación en línea</li>
-        <li>Presentar una declaración de ingresos familiares</li>
-        <li>Realizar un estudio socioeconómico (costo: $600 a $1,100 MXN)</li>
-        <li>Presentar examen académico y prueba psicológica en el campus</li>
-        <li>Realizar entrevista en el campus</li>
-      </ul>
-      
-      <h3>📤 ¿Cómo aplicar?</h3>
-      <p>Postúlate aquí:<br>
-      🔗 <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: underline; font-weight: 600;">Postúlate aquí</a></p>
-      
-      <p>📅 Apertura: Junio 16, 2025<br>
-      📅 Cierre: Julio 30, 2025</p>
-      
-      <blockquote>
-        💡 "El acceso a la educación de calidad es la base para mejorar la vida de las personas y alcanzar el desarrollo sostenible."<br>
-        — Agenda 2030 - Objetivo de Desarrollo Sostenible #4 (ONU)
-      </blockquote>
-      
-      <p>Postúlate. Sé parte de una nueva generación de futuros líderes de un México sostenible.</p>
-      <p>🟢 Estamos buscando a los próximos México Champs.</p>
-    </div>
-  </div>
 
   <script>
-    // Modal functionality
-    const modal = document.getElementById('convocatoriaModal');
-    const closeModalBtn = document.getElementById('closeConvocatoriaModal');
-    const convocatoriaLink = document.querySelector('a[href="#convocatoria"]');
-    const openModalBtn = document.getElementById('openConvocatoriaModal');
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
 
-    if (convocatoriaLink && modal && closeModalBtn) {
-      // Add click event for the convocatoria link
-      convocatoriaLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+    menuToggle.addEventListener('click', function() {
+      this.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Cerrar el menú cuando se hace clic en un enlace
+    const navItems = navLinks.querySelectorAll('a');
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
       });
+    });
 
-      // Add click event for the open modal button
-      if (openModalBtn) {
-        openModalBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          modal.style.display = 'flex';
-          document.body.style.overflow = 'hidden';
-        });
+    // Cerrar el menú al hacer clic fuera
+    document.addEventListener('click', function(event) {
+      const isClickInsideMenu = navLinks.contains(event.target);
+      const isClickOnToggle = menuToggle.contains(event.target);
+      
+      if (!isClickInsideMenu && !isClickOnToggle && navLinks.classList.contains('active')) {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
       }
-
-      closeModalBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-      });
-
-      // Close modal when clicking outside of it
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-          document.body.style.overflow = '';
-        }
-      });
-
-      // Close modal with Escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
-          modal.style.display = 'none';
-          document.body.style.overflow = '';
-        }
-      });
-    }
+    });
   </script>
 
 </body>
