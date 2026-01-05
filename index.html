@@ -800,6 +800,95 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: var(--border-radius);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--primary-color);
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close-modal:hover {
+      color: var(--secondary-color);
+    }
+
+    .modal-content h2 {
+      color: var(--primary-color);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .modal-content h3 {
+      color: var(--primary-color);
+      margin: 20px 0 10px 0;
+      font-size: 1.3rem;
+    }
+
+    .modal-content p {
+      margin-bottom: 15px;
+      line-height: 1.6;
+    }
+
+    .modal-content ul {
+      margin: 15px 0;
+      padding-left: 20px;
+    }
+
+    .modal-content li {
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .modal-content blockquote {
+      background: var(--light-bg);
+      padding: 15px;
+      border-left: 4px solid var(--primary-color);
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    .innova-font {
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+      .modal-content {
+        padding: 20px;
+        margin: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -816,6 +905,7 @@
       <a href="#quienes">¿Quiénes Somos?</a>
       <a href="#programas">Programas</a>
       <a href="#resultados" style="color: #FFD700; font-weight: 700;">Resultados 2025</a>
+      <a href="#convocatoria">Convocatoria 2025-2026</a>
       <a href="#impacto">Impacto</a>
       <a href="#donar">Donar</a>
       <div class="language-selector">
@@ -920,7 +1010,10 @@
           </div>
 
           <div style="text-align: center; margin-top: 40px;">
-            <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" class="cta-button" target="_blank" rel="noopener noreferrer">Quiero postular a la beca</a>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+              <a href="#" class="cta-button" id="openConvocatoriaModal" style="background-color: var(--primary-color);">CONVOCATORIA 2025-2026</a>
+              <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" class="cta-button" target="_blank" rel="noopener noreferrer">QUIERO POSTULAR A LA BECA</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1070,6 +1163,60 @@
     </div>
   </section>
 
+  <div id="convocatoriaModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeConvocatoriaModal">&times;</span>
+      <div style="text-align:center; margin-bottom: 18px;">
+        <img src="assets/Logo.svg" alt="México Champs" style="max-width: 120px; height: auto; display: block; margin: 0 auto 10px auto;">
+      </div>
+      <h2 style="text-align:center; margin-bottom: 10px; color: #006847;">Convocatoria Oficial 2025-2026. Fundación Innova México</h2>
+
+      <hr style="margin: 12px 0 18px 0; border: none; border-top: 2px solid #CE1126;">
+      <p style="font-size:1.1rem; text-align:center; margin-bottom: 18px; color: #CE1126;"><strong>🟢 "Estamos buscando a los próximos México Champs"</strong></p>
+
+      <p><strong>¿Tienes talento y grandes sueños?</strong></p>
+      <p>La Fundación Innova México lanza su Convocatoria 2025 para estudiantes que ingresarán a 1º de secundaria y desean estudiar en <span class="innova-font">Innova Schools</span></p>
+
+      <p>Buscamos a niñas y niños con talento académico provenientes de familias con recursos económicos limitados, que sueñan con transformar su vida a través de la educación.</p>
+
+      <h3>🎓 ¿Qué ofrecemos?</h3>
+      <ul>
+        <li>✅ Becas hasta del  75% del costo escolar anual</li>
+        <li>✅ Acompañamiento psicológico y emocional</li>
+        <li>✅ Programa de liderazgo y formación integral</li>
+        <li>✅ Comunidad educativa innovadora y de alto nivel</li>
+      </ul>
+
+      <p>🔸 La familia deberá cubrir el costo de libros, útiles y uniformes escolares.</p>
+
+      <h3>📝 Requisitos para postularse:</h3>
+      <ul>
+        <li>Estar por ingresar a 1º de secundaria en septiembre de 2025</li>
+        <li>Tener un promedio destacado en 6º de primaria</li>
+        <li>Llenar el formulario de postulación en línea</li>
+        <li>Presentar una declaración de ingresos familiares</li>
+        <li>Realizar un estudio socioeconómico (costo: $600 a $1,100 MXN)</li>
+        <li>Presentar examen académico y prueba psicológica en el campus</li>
+        <li>Realizar entrevista en el campus</li>
+      </ul>
+
+      <h3>📤 ¿Cómo aplicar?</h3>
+      <p>Postúlate aquí:<br>
+      🔗 <a href="https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1" target="_blank" rel="noopener noreferrer" style="color: var(--primary-color); text-decoration: underline; font-weight: 600;">Postúlate aquí</a></p>
+
+      <p>📅 Apertura: Junio 16, 2025<br>
+      📅 Cierre: Julio 30, 2025</p>
+
+      <blockquote>
+        💡 "El acceso a la educación de calidad es la base para mejorar la vida de las personas y alcanzar el desarrollo sostenible."<br>
+        — Agenda 2030 - Objetivo de Desarrollo Sostenible #4 (ONU)
+      </blockquote>
+
+      <p>Postúlate. Sé parte de una nueva generación de futuros líderes de un México sostenible.</p>
+      <p>🟢 Estamos buscando a los próximos México Champs.</p>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-content">
       <p>© Fundación INNOVA México 2025 · Todos los derechos reservados</p>
@@ -1101,12 +1248,57 @@
     document.addEventListener('click', function(event) {
       const isClickInsideMenu = navLinks.contains(event.target);
       const isClickOnToggle = menuToggle.contains(event.target);
-      
+
       if (!isClickInsideMenu && !isClickOnToggle && navLinks.classList.contains('active')) {
         menuToggle.classList.remove('active');
         navLinks.classList.remove('active');
       }
     });
+
+    // Modal functionality
+    const modal = document.getElementById('convocatoriaModal');
+    const closeModalBtn = document.getElementById('closeConvocatoriaModal');
+    const convocatoriaLink = document.querySelector('a[href="#convocatoria"]');
+    const openModalBtn = document.getElementById('openConvocatoriaModal');
+
+    if (convocatoriaLink && modal && closeModalBtn) {
+      // Add click event for the convocatoria link
+      convocatoriaLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Add click event for the open modal button
+      if (openModalBtn) {
+        openModalBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          modal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        });
+      }
+
+      closeModalBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+
+      // Close modal when clicking outside of it
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+          modal.style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    }
   </script>
 
 </body>
