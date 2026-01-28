@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Reglamento del Programa de Becas - Fundación Innova México</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    :root {
+      --primary-color: #006847;
+      --secondary-color: #CE1126;
+      --accent-color: #FFFFFF;
+      --text-color: #333333;
+      --light-bg: #f8f9fa;
+      --max-width: 1200px;
+      --section-padding: 60px 40px;
+      --card-padding: 30px;
+      --border-radius: 15px;
+      --container-margin: 40px;
+      --section-spacing: 40px;
+    }
+
+    .top-nav {
+      background-color: var(--primary-color);
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    .back-button {
+      background-color: var(--secondary-color);
+      color: var(--accent-color);
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .back-button:hover {
+      background-color: transparent;
+      border-color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .reglamento-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 200px 40px 60px;
+      line-height: 1.6;
+    }
+
+    .reglamento-title {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 900;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .reglamento-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--secondary-color);
+    }
+
+    .reglamento-section {
+      margin-bottom: 40px;
+    }
+
+    .reglamento-section h2 {
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-left: 4px solid var(--secondary-color);
+      padding-left: 20px;
+    }
+
+    .reglamento-section p {
+      margin-bottom: 15px;
+      color: var(--text-color);
+    }
+
+    .reglamento-section ul {
+      margin: 15px 0;
+      padding-left: 30px;
+    }
+
+    .reglamento-section li {
+      margin-bottom: 10px;
+      color: var(--text-color);
+    }
+
+    .reglamento-section strong {
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .reglamento-section hr {
+      border: none;
+      border-top: 2px solid var(--light-bg);
+      margin: 30px 0;
+    }
+
+    .note-box {
+      background-color: var(--light-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      margin: 30px 0;
+      border-left: 4px solid var(--secondary-color);
+    }
+
+    .note-box p {
+      margin: 0;
+      font-style: italic;
+    }
+
+    .vigencia-box {
+      background-color: var(--light-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      margin-top: 40px;
+      border-left: 4px solid var(--secondary-color);
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: var(--accent-color);
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    footer .footer-content {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .top-nav {
+        padding: 15px 20px;
+      }
+
+      .nav-logo {
+        width: 120px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .reglamento-content {
+        padding: 180px 20px 40px;
+      }
+
+      .reglamento-title {
+        font-size: 1.8rem;
+      }
+
+      .reglamento-section h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <img src="assets/Logo 2.svg" alt="Fundacion Innova Mexico" class="nav-logo">
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#quienes">Quienes Somos?</a>
+      <a href="index.html#programas">Programas</a>
+      <a href="index.html#donar">Donar</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <div class="reglamento-content">
+    <h1 class="reglamento-title">Reglamento del Programa de Becas Educativas</h1>
+    <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: var(--primary-color); font-weight: 600;">
+      Fundacion Innova Mexico, A.C.
+    </p>
+
+    <div class="reglamento-section">
+      <h2>I. Objeto del Reglamento</h2>
+      <p>El presente Reglamento tiene por objeto establecer las bases, criterios, derechos y obligaciones conforme a los cuales Fundacion Innova Mexico, A.C. otorga becas educativas a ninas, ninos y adolescentes en situacion de vulnerabilidad socioeconomica, con el fin de apoyar su acceso, permanencia y continuidad educativa.</p>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>II. Poblacion beneficiaria</h2>
+      <p>El Programa de Becas esta dirigido a personas menores de edad que cursen nivel primaria o secundaria, de acuerdo con los grados definidos en cada convocatoria anual, y que cumplan con los criterios academicos y socioeconomicos establecidos por la Fundacion.</p>
+      <p>Para cada ciclo escolar, la Fundacion definira los grados y niveles educativos participantes mediante la convocatoria correspondiente.</p>
+      <p>En particular, la <strong>Convocatoria 2025-2026</strong> esta dirigida exclusivamente a estudiantes que ingresen a <strong>1 de secundaria</strong>, conforme a los criterios establecidos en dicha convocatoria.</p>
+      <p>Para efectos de ingreso inicial al Programa de Becas, el tercer grado de secundaria constituye el ultimo nivel en el que un estudiante puede postular por primera vez.</p>
+      <p>Los beneficiarios que concluyan la educacion secundaria podran solicitar la continuidad del apoyo para bachillerato, siempre que cumplan con los criterios academicos, socioeconomicos y de permanencia, y que exista disponibilidad presupuestal.</p>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>III. Naturaleza de la beca</h2>
+      <p>La Beca Educativa es un apoyo de caracter asistencial y educativo, otorgado sin fines de lucro, cuyo beneficiario directo es el estudiante.</p>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>IV. Alcance del apoyo</h2>
+      <p>La Beca Educativa consiste en un apoyo economico parcial, cuyo alcance se determina conforme a la convocatoria vigente y a la disponibilidad de recursos de la Fundacion, y podra incluir:</p>
+      <ul>
+        <li>Cobertura del examen de admision.</li>
+        <li>Cobertura del 100% del costo de inscripcion correspondiente al ciclo escolar aplicable.</li>
+        <li>Cobertura de hasta el 75% del costo de la colegiatura, conforme al modelo de corresponsabilidad establecido.</li>
+      </ul>
+      <p>El alcance especifico del apoyo se definira de manera individual para cada beneficiario y ciclo escolar.</p>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>V. Requisitos para postulacion</h2>
+      <p>Los aspirantes deberan cumplir con:</p>
+      <ul>
+        <li>El nivel y grado escolar definidos en la convocatoria vigente.</li>
+        <li>Contar con buen desempeno academico y conducta adecuada.</li>
+        <li>Demostrar talento academico.</li>
+        <li>Encontrarse en situacion de vulnerabilidad socioeconomica evaluada mediante un estudio socioeconomico aplicado por la Fundacion.</li>
+        <li>Presentar la documentacion requerida.</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>VI. Proceso de seleccion</h2>
+      <p>El proceso de seleccion se realizara de manera transparente y objetiva, conforme a la convocatoria vigente, e incluira:</p>
+      <ul>
+        <li>Publicacion de convocatoria anual.</li>
+        <li>Recepcion y revision de solicitudes.</li>
+        <li>Evaluacion academica y socioeconomica.</li>
+        <li>Emision de un dictamen interno.</li>
+        <li>Publicacion de resultados mediante folios de beneficiarios, salvaguardando la proteccion de datos personales.</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>VII. Derechos de los beneficiarios</h2>
+      <p>Los beneficiarios tendran derecho a:</p>
+      <ul>
+        <li>Recibir informacion clara y oportuna sobre el programa.</li>
+        <li>Ser evaluados conforme a criterios objetivos.</li>
+        <li>Que su informacion personal sea tratada de manera confidencial.</li>
+        <li>Recibir el apoyo economico autorizado.</li>
+        <li>Solicitar la renovacion del apoyo conforme a los criterios establecidos.</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>VIII. Obligaciones de los beneficiarios y sus familias</h2>
+      <p>Los beneficiarios y sus familias deberan:</p>
+      <ul>
+        <li>Mantener desempeno academico satisfactorio y buena conducta.</li>
+        <li>Cumplir con normas escolares aplicables.</li>
+        <li>Cubrir el porcentaje de corresponsabilidad.</li>
+        <li>Cubrir gastos de libros, utiles escolares y uniformes.</li>
+        <li>Proporcionar informacion veraz.</li>
+        <li>Participar en actividades de seguimiento.</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>IX. Seguimiento, suspension y terminacion del apoyo</h2>
+      <p>La Fundacion dara seguimiento al cumplimiento de los criterios del Programa de Becas. El apoyo podra suspenderse o darse por concluido, previa valoracion del caso, cuando exista:</p>
+      <ul>
+        <li>Incumplimiento reiterado.</li>
+        <li>Informacion falsa.</li>
+        <li>Desaparicion de la condicion de vulnerabilidad socioeconomica.</li>
+        <li>Circunstancias que imposibiliten la continuidad del apoyo.</li>
+      </ul>
+      <p>Se privilegiara siempre un enfoque de analisis y acompanamiento.</p>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>X. Transparencia y proteccion de datos personales</h2>
+      <p>La Fundacion garantizara el manejo responsable, confidencial y seguro de la informacion personal de los beneficiarios, conforme a la legislacion aplicable en materia de proteccion de datos personales.</p>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>XI. Vigencia y renovacion</h2>
+      <p>Las becas se otorgan por un ciclo escolar y podran renovarse conforme a los criterios establecidos en el presente Reglamento y a lo dispuesto en la convocatoria correspondiente a cada ciclo escolar.</p>
+    </div>
+
+    <hr>
+
+    <div class="reglamento-section">
+      <h2>XII. Vigencia del Reglamento</h2>
+      <p>El presente Reglamento entra en vigor a partir de su publicacion en el sitio web institucional de Fundacion Innova Mexico, A.C.</p>
+    </div>
+
+    <div class="note-box">
+      <p><strong>Nota aclaratoria:</strong> Este Reglamento establece los lineamientos generales del Programa de Becas. Las condiciones especificas del apoyo otorgado a cada beneficiario se detallan en el convenio individual de beca correspondiente.</p>
+    </div>
+
+    <div class="vigencia-box">
+      <strong>Vigente a partir de su publicacion en el sitio web institucional</strong>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="index.html#programas" class="back-button">Volver a Programas</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>Fundacion INNOVA Mexico 2025 - Todos los derechos reservados</p>
+    </div>
+  </footer>
+</body>
+</html>
