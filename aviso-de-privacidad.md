@@ -2,8 +2,8 @@
 
 ## 1. Responsable del Tratamiento
 Fundación Innova México, A.C.  
-Domicilio fiscal: **Por definir**  
-Correo: **fernanda.lopez@fundacioninnovamx.com**  
+Domicilio fiscal: **Av. Paseo de la Reforma 365, Col. Cuauhtémoc, C.P. 06500, Ciudad de México**
+Correo: **fernanda.lopez@fundacioninnovamx.org**
 Teléfono: **+52 55 5533 0734**  
 
 Este aviso se emite en cumplimiento de los artículos 15 y 16 de la **Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)**.
@@ -19,9 +19,11 @@ Este aviso se emite en cumplimiento de los artículos 15 y 16 de la **Ley Federa
 ## 3. Datos Personales que Recabamos
 | Personas físicas | Personas morales |
 |------------------|------------------|
-| Nombre, correo, teléfono, dirección, fecha y lugar de nacimiento, estado civil, ocupación, escolaridad, datos financieros, promedio académico, datos de salud/psicológicos (sensibles), fotografías, datos bancarios y donativos. | Razón social, RFC, nombre y datos del representante legal, teléfono, correo, dirección. |
+| Nombre, correo, teléfono, dirección, fecha y lugar de nacimiento, estado civil, ocupación, escolaridad, CURP, documentos escolares, promedio académico, datos financieros y socioeconómicos, comprobantes de ingresos, fotografías, archivos cargados y, cuando aplique, datos de salud o psicológicos. | Razón social, RFC, nombre y datos del representante legal, teléfono, correo, dirección. |
 
 **Datos sensibles:** Información psicológica, de salud y socioeconómica tratada con protección reforzada.
+
+En procesos de postulación a becas se podrán recabar documentos de identidad, documentos escolares, comprobantes de domicilio e ingresos, estudio socioeconómico, carta de motivación, firma del padre, madre o tutor, aceptación del aviso de privacidad y fecha/hora de envío.
 
 ---
 
@@ -43,7 +45,7 @@ Para finalidades secundarias (difusión, testimonios, campañas) se solicitará 
 ---
 
 ## 6. Limitación, Revocación u Oposición
-El titular puede limitar o revocar el consentimiento enviando un correo a **fernanda.lopez@fundacioninnovamx.com** con:
+El titular puede limitar o revocar el consentimiento enviando un correo a **fernanda.lopez@fundacioninnovamx.org** con:
 - Nombre y medio de contacto.  
 - Descripción de los datos a limitar/revocar.  
 - Documentación de soporte (cuando aplique).
@@ -108,4 +110,4 @@ El uso del sitio web, la participación en programas y la entrega de datos impli
 
 ---
 
-**Última actualización:** 22 de agosto de 2025
+**Última actualización:** 25 de junio de 2026

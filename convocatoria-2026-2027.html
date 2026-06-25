@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Convocatoria oficial 2026-2027 del Programa de Becas Mexico Champs de Fundacion Innova Mexico." />
+  <title>Convocatoria 2026-2027 - Fundacion Innova Mexico</title>
+  <link rel="icon" type="image/svg+xml" href="assets/Logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary-color: #006847;
+      --secondary-color: #CE1126;
+      --accent-color: #FFFFFF;
+      --text-color: #333333;
+      --light-bg: #f8f9fa;
+      --max-width: 1120px;
+      --border-radius: 8px;
+    }
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text-color);
+      line-height: 1.65;
+      background: #fff;
+    }
+    .top-nav {
+      background-color: var(--primary-color);
+      padding: 10px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-logo img { height: 42px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+    .nav-links a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .hero {
+      background: linear-gradient(rgba(0, 104, 71, 0.86), rgba(0, 104, 71, 0.86)), url('assets/foto3.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 96px 40px 72px;
+    }
+    .hero-inner, .content {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 0 auto;
+    }
+    .eyebrow {
+      color: #f4d35e;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+    .hero p {
+      max-width: 760px;
+      font-size: 1.08rem;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 34px;
+    }
+    .stat {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.24);
+      border-radius: var(--border-radius);
+      padding: 18px;
+      min-height: 104px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .content { padding: 54px 40px 70px; }
+    .notice {
+      background: #fff7e6;
+      border-left: 5px solid #f4a261;
+      padding: 20px;
+      border-radius: var(--border-radius);
+      margin-bottom: 34px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin: 28px 0;
+    }
+    .panel {
+      background: var(--light-bg);
+      border-radius: var(--border-radius);
+      padding: 24px;
+      border: 1px solid #e8ecef;
+    }
+    h2 {
+      color: var(--primary-color);
+      font-size: 1.65rem;
+      margin: 36px 0 16px;
+      font-weight: 800;
+    }
+    h3 {
+      color: var(--primary-color);
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+    ul, ol { padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    .timeline {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+    }
+    .timeline th, .timeline td {
+      border-bottom: 1px solid #e2e6ea;
+      padding: 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .timeline th {
+      background: var(--primary-color);
+      color: white;
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 26px;
+      align-items: center;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 14px 26px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 2px solid var(--secondary-color);
+    }
+    .cta-button.secondary {
+      background: white;
+      color: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+    .cta-button.is-disabled {
+      background: #6c757d;
+      border-color: #6c757d;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .download-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .download-list a {
+      border: 1px solid #dfe5e8;
+      border-radius: var(--border-radius);
+      padding: 16px;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 700;
+      background: white;
+    }
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.9rem;
+    }
+    footer a { color: white; }
+    @media (max-width: 800px) {
+      .top-nav { padding: 12px 18px; align-items: center; gap: 10px; flex-direction: column; }
+      .nav-links { display: grid; grid-template-columns: repeat(2, max-content); gap: 8px 14px; justify-content: center; width: 100%; }
+      .nav-links a { font-size: 0.7rem; }
+      .hero { padding: 68px 20px 48px; overflow: hidden; }
+      .hero-inner { width: 320px; max-width: 100%; margin-left: 0; }
+      .content { padding: 36px 20px 54px; }
+      .eyebrow, h1, .hero p { width: 320px; max-width: 100%; }
+      .eyebrow { font-size: 0.72rem; letter-spacing: 0.04em; }
+      h1 { font-size: clamp(2rem, 11vw, 2.6rem); }
+      .hero p { font-size: 1rem; }
+      .stats, .grid, .download-list { grid-template-columns: 1fr; }
+      .timeline { font-size: 0.92rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html" class="nav-logo"><img src="assets/Logo.svg" alt="Mexico Champs"></a>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="convocatoria-2026-2027.html">Convocatoria</a>
+      <a href="transparencia.html">Transparencia</a>
+      <a href="convocatorias-anteriores.html">Anteriores</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Programa de Becas · Fundacion Innova Mexico, A.C.</div>
+      <h1>Convocatoria Oficial<br>2026-2027</h1>
+      <p>Estamos buscando a los proximos Mexico Champs®. La convocatoria es publica, gratuita y abierta a familias con estudiantes que ingresan a 1°, 2° o 3° de secundaria en Innova Schools Mexico.</p>
+      <div class="stats">
+        <div class="stat"><strong>1°, 2° y 3°</strong>Secundaria</div>
+        <div class="stat"><strong>Hasta 75%</strong>Beca en colegiatura</div>
+        <div class="stat"><strong>6 jul 2026</strong>Apertura de registro</div>
+        <div class="stat"><strong>21 ago 2026</strong>Publicacion de resultados</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="notice">
+      <strong>Registro pendiente de apertura.</strong> El formulario de postulacion abrira el 6 de julio de 2026. Mientras tanto, prepara tus documentos y descarga el estudio socioeconomico.
+    </div>
+
+    <section>
+      <h2>Que es la Beca Mexico Champs®</h2>
+      <p>Fundacion Innova Mexico, A.C., donataria autorizada por el SAT con RFC FIM2502248G1, convoca a estudiantes con talento academico y condiciones economicas limitadas que desean cursar secundaria en Innova Schools Mexico.</p>
+      <p>La beca busca apoyar el acceso, permanencia y continuidad educativa. Postularse no garantiza el otorgamiento del apoyo; la seleccion depende del cumplimiento de requisitos, la evaluacion de la Fundacion y la disponibilidad de recursos y espacios.</p>
+    </section>
+
+    <section class="grid">
+      <div class="panel">
+        <h3>Que incluye</h3>
+        <ul>
+          <li>Cobertura del 100% del costo de inscripcion correspondiente al ciclo escolar 2026-2027.</li>
+          <li>Cobertura de hasta el 75% del costo de colegiatura, conforme al modelo de corresponsabilidad.</li>
+          <li>Porcentaje determinado segun el estudio socioeconomico y disponibilidad de recursos.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Gastos de la familia</h3>
+        <ul>
+          <li>Libros.</li>
+          <li>Utiles escolares.</li>
+          <li>Uniformes.</li>
+          <li>Porcentaje de corresponsabilidad familiar, cuando aplique.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Requisitos</h2>
+      <div class="grid">
+        <div class="panel">
+          <h3>Perfil del candidato</h3>
+          <ul>
+            <li>Ingresar a 1°, 2° o 3° de secundaria en el ciclo escolar 2026-2027.</li>
+            <li>Contar con buen desempeno academico y conducta adecuada.</li>
+            <li>Demostrar talento academico.</li>
+            <li>Encontrarse en situacion de vulnerabilidad socioeconomica comprobable.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Documentos a preparar</h3>
+          <ul>
+            <li>CURP del candidato.</li>
+            <li>Acta de nacimiento.</li>
+            <li>Boleta de calificaciones del ciclo escolar anterior.</li>
+            <li>INE del padre, madre o tutor.</li>
+            <li>Comprobante de domicilio no mayor a 3 meses.</li>
+            <li>Comprobante de ingresos del hogar.</li>
+            <li>Carta de motivacion del candidato.</li>
+            <li>Estudio socioeconomico completo y legible.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Proceso de seleccion</h2>
+      <ol>
+        <li><strong>Registro en linea:</strong> llena el formulario a partir del 6 de julio de 2026.</li>
+        <li><strong>Revision de documentos:</strong> presenta la documentacion requerida, incluyendo historial academico del ano anterior.</li>
+        <li><strong>Evaluacion academica:</strong> examen y entrevista presencial en el campus asignado.</li>
+        <li><strong>Estudio socioeconomico:</strong> revision del formato y validacion por la Fundacion.</li>
+        <li><strong>Publicacion de resultados:</strong> mediante folios de beneficiarios en este sitio.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Calendario</h2>
+      <table class="timeline">
+        <thead><tr><th>Etapa</th><th>Fecha</th></tr></thead>
+        <tbody>
+          <tr><td>Apertura de convocatoria y formulario en linea</td><td>6 de julio de 2026</td></tr>
+          <tr><td>Cierre de recepcion de solicitudes</td><td>19 de agosto de 2026</td></tr>
+          <tr><td>Evaluaciones en campus</td><td>Agenda tu cita en el campus de tu preferencia</td></tr>
+          <tr><td>Publicacion oficial de resultados</td><td>21 de agosto de 2026</td></tr>
+          <tr><td>Inscripcion de becarios e inicio de clases</td><td>Agosto de 2026</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Campus participantes</h2>
+      <div class="grid">
+        <div class="panel">
+          <h3>Estado de Mexico</h3>
+          <p>Atizapan, Coacalco, Cuautitlan Izcalli, Ecatepec, Huehuetoca, Ojo de Agua, Tultepec, Zumpango y Chalco.</p>
+        </div>
+        <div class="panel">
+          <h3>Hidalgo y Queretaro</h3>
+          <p>Tizayuca, El Marques y La Joya.</p>
+        </div>
+      </div>
+      <p>La disponibilidad de becas en cada campus esta sujeta a espacios y recursos disponibles.</p>
+    </section>
+
+    <section>
+      <h2>Antes de postular</h2>
+      <p>Ten tus documentos listos antes de iniciar. Usa archivos PDF, JPG o PNG; si tomas fotos desde celular, hazlo de frente, con buena luz, sin sombras y sin recortar bordes. Revisa que todos los textos sean legibles antes de enviar.</p>
+      <div class="download-list">
+        <a href="assets/docs/convocatoria-2026-2027.docx" download>Descargar convocatoria</a>
+        <a href="assets/docs/estudio-socioeconomico-innova-2026.docx" download>Descargar estudio socioeconomico</a>
+        <a href="reglamento.html">Consultar reglamento</a>
+      </div>
+      <div class="cta-row">
+        <a class="cta-button is-disabled" id="postulationButton" href="#" aria-disabled="true">El registro abre el 6 de julio</a>
+        <a class="cta-button secondary" href="aviso-de-privacidad.html">Aviso de privacidad</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contacto</h2>
+      <p>Correo: <a href="mailto:fernanda.lopez@fundacioninnovamx.org">fernanda.lopez@fundacioninnovamx.org</a></p>
+      <p>Telefono: <a href="tel:+525555330734">55 5533 0734</a></p>
+      <p>Citas en campus: Sandra Figueroa · <a href="tel:+525545728624">55 4572 8624</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Fundacion Innova Mexico, A.C. · Donataria autorizada por el SAT · RFC FIM2502248G1</p>
+    <p><a href="transparencia.html">Transparencia</a> · <a href="aviso-de-privacidad.html">Aviso de privacidad</a></p>
+  </footer>
+
+  <script>
+    const postulationButton = document.getElementById('postulationButton');
+    const openingDate = new Date('2026-07-06T00:00:00-06:00');
+    const mondayFormUrl = 'https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1';
+
+    if (new Date() >= openingDate) {
+      postulationButton.textContent = 'Postulate';
+      postulationButton.href = mondayFormUrl;
+      postulationButton.target = '_blank';
+      postulationButton.rel = 'noopener noreferrer';
+      postulationButton.classList.remove('is-disabled');
+      postulationButton.removeAttribute('aria-disabled');
+    }
+  </script>
+</body>
+</html>

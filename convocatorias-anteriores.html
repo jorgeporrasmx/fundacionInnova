@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convocatorias anteriores - Fundacion Innova Mexico</title>
+  <link rel="icon" type="image/svg+xml" href="assets/Logo.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary-color: #006847; --secondary-color: #CE1126; --accent-color: #fff; --text-color: #333; --light-bg: #f8f9fa; --max-width: 960px; --border-radius: 8px; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--text-color); line-height: 1.65; }
+    .top-nav { background: var(--primary-color); padding: 10px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+    .top-nav img { height: 42px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+    .nav-links a { color: white; text-decoration: none; font-size: .85rem; font-weight: 700; text-transform: uppercase; }
+    main { max-width: var(--max-width); margin: 0 auto; padding: 76px 40px 70px; }
+    h1 { color: var(--primary-color); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin-bottom: 16px; font-weight: 900; }
+    h2 { color: var(--primary-color); margin: 34px 0 14px; border-left: 5px solid var(--secondary-color); padding-left: 14px; }
+    p, li { margin-bottom: 8px; }
+    ul { padding-left: 22px; }
+    .status { display: inline-block; background: #6c757d; color: white; border-radius: 999px; padding: 6px 12px; font-weight: 800; font-size: .8rem; text-transform: uppercase; margin-bottom: 20px; }
+    .panel { background: var(--light-bg); border: 1px solid #e3e7ea; border-radius: var(--border-radius); padding: 22px; margin-top: 18px; }
+    .result-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+    .folio { background: #fff; border: 1px solid #dfe5e8; border-radius: var(--border-radius); padding: 14px; text-align: center; font-weight: 800; color: var(--primary-color); }
+    .cta-button { display: inline-block; background: var(--primary-color); color: white; padding: 12px 22px; border-radius: 999px; text-decoration: none; font-weight: 800; margin-top: 20px; }
+    footer { background: var(--primary-color); color: white; text-align: center; padding: 24px; font-size: .9rem; }
+    footer a { color: white; }
+    @media (max-width: 760px) { .top-nav, main { padding-left: 20px; padding-right: 20px; } .result-list { grid-template-columns: 1fr; } .nav-links { gap: 12px; justify-content: flex-end; } .nav-links a { font-size: .74rem; } }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="index.html"><img src="assets/Logo.svg" alt="Mexico Champs"></a>
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="convocatoria-2026-2027.html">Convocatoria</a>
+      <a href="transparencia.html">Transparencia</a>
+      <a href="index.html#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <main>
+    <span class="status">Cerrada</span>
+    <h1>Convocatoria 2025-2026</h1>
+    <p>La convocatoria 2025-2026 del Programa de Becas de Fundacion Innova Mexico, A.C. se conserva como antecedente publico. El periodo de registro ya concluyo.</p>
+
+    <section class="panel">
+      <h2>Resumen</h2>
+      <p>La convocatoria estuvo dirigida a estudiantes que ingresaron a 1° de secundaria en el ciclo escolar 2025-2026, con talento academico y condicion de vulnerabilidad socioeconomica comprobable.</p>
+      <ul>
+        <li>Apertura: 16 de junio de 2025.</li>
+        <li>Cierre: 30 de julio de 2025.</li>
+        <li>Apoyo: inscripcion y hasta 75% de colegiatura, conforme a evaluacion.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Folios beneficiarios 2025-2026</h2>
+      <p>Los resultados se publican mediante folios para salvaguardar la proteccion de datos personales.</p>
+      <div class="result-list">
+        <div class="folio">41104414619</div>
+        <div class="folio">41078969694</div>
+        <div class="folio">41104418860</div>
+        <div class="folio">41504956851</div>
+      </div>
+    </section>
+
+    <a class="cta-button" href="convocatoria-2026-2027.html">Ver convocatoria activa</a>
+  </main>
+
+  <footer>
+    <p>Fundacion Innova Mexico, A.C. · <a href="transparencia.html">Transparencia</a></p>
+  </footer>
+</body>
+</html>

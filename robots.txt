@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://fundacioninnovamx.com/sitemap.xml
+Sitemap: https://www.fundacioninnovamx.org/sitemap.xml
