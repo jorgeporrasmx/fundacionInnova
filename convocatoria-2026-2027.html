@@ -222,6 +222,7 @@
     <div class="nav-links">
       <a href="index.html">Inicio</a>
       <a href="convocatoria-2026-2027.html">Convocatoria</a>
+      <a href="resultados-2026-2027.html">Resultados</a>
       <a href="transparencia.html">Transparencia</a>
       <a href="convocatorias-anteriores.html">Anteriores</a>
       <a href="index.html#contacto">Contacto</a>
@@ -232,7 +233,7 @@
     <div class="hero-inner">
       <div class="eyebrow">Programa de Becas · Fundación Innova México, A.C.</div>
       <h1>Convocatoria Oficial<br>2026-2027</h1>
-      <p>Estamos buscando a los próximos México Champs®. La convocatoria es pública, gratuita y abierta a familias con estudiantes que ingresan a 1°, 2° o 3° de secundaria en Innova Schools México.</p>
+      <p>La convocatoria 2026-2027 ha concluido. Agradecemos a todas las familias que participaron en el proceso.</p>
       <div class="stats">
         <div class="stat"><strong>1°, 2° y 3°</strong>Secundaria</div>
         <div class="stat"><strong>Hasta 75%</strong>Beca en colegiatura</div>
@@ -243,6 +244,10 @@
   </header>
 
   <main class="content">
+    <section class="notice">
+      <h2>Convocatoria cerrada</h2>
+      <p>El periodo de postulación concluyó el 26 de agosto de 2026. Los resultados oficiales se publicaron el 28 de agosto de 2026 mediante folios de beneficiarios, para proteger los datos personales.</p>
+    </section>
     <section>
       <h2>Qué es la Beca México Champs®</h2>
       <p>Fundación Innova México, A.C., donataria autorizada por el SAT con RFC FIM2502248G1, convoca a estudiantes con talento académico y condiciones económicas limitadas que desean cursar secundaria en Innova Schools México.</p>
@@ -346,7 +351,7 @@
         <a href="reglamento.html">Consultar reglamento</a>
       </div>
       <div class="cta-row">
-        <a class="cta-button is-disabled" id="postulationButton" href="#" aria-disabled="true">El registro abre el 6 de julio</a>
+        <a class="cta-button is-disabled" href="#" aria-disabled="true">Convocatoria cerrada</a>
         <a class="cta-button secondary" href="aviso-de-privacidad.html">Aviso de privacidad</a>
       </div>
     </section>
@@ -364,19 +369,5 @@
     <p><a href="transparencia.html">Transparencia</a> · <a href="aviso-de-privacidad.html">Aviso de privacidad</a></p>
   </footer>
 
-  <script>
-    const postulationButton = document.getElementById('postulationButton');
-    const openingDate = new Date('2026-07-06T00:00:00-06:00');
-    const mondayFormUrl = 'https://forms.monday.com/forms/bab412299d8b9af7642193822a7b3a30?r=use1';
-
-    if (new Date() >= openingDate) {
-      postulationButton.textContent = 'Postúlate';
-      postulationButton.href = mondayFormUrl;
-      postulationButton.target = '_blank';
-      postulationButton.rel = 'noopener noreferrer';
-      postulationButton.classList.remove('is-disabled');
-      postulationButton.removeAttribute('aria-disabled');
-    }
-  </script>
 </body>
 </html>
