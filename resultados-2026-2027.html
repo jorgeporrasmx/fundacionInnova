@@ -27,7 +27,13 @@
     .cta { display: inline-block; margin-top: 22px; background: var(--primary); color: white; border-radius: 999px; padding: 12px 22px; text-decoration: none; font-weight: 800; }
     footer { background: var(--primary); color: white; text-align: center; padding: 24px; font-size: .9rem; }
     footer a { color: white; }
-    @media (max-width: 760px) { .top-nav, header, main { padding-left: 20px; padding-right: 20px; } .result-list { grid-template-columns: 1fr; } .nav-links { gap: 12px; justify-content: flex-end; } .nav-links a { font-size: .74rem; } }
+    @media (max-width: 760px) {
+      .top-nav, header, main { padding-left: 20px; padding-right: 20px; }
+      .top-nav { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .nav-links { width: 100%; gap: 12px; justify-content: flex-start; }
+      .nav-links a { font-size: .74rem; }
+      .result-list { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
